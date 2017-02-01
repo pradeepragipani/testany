@@ -1,0 +1,53 @@
+<ion-slide>
+<ion-view view-title="FEEDBACK">
+  <div align="left" class="bar bar-header-editprofile">
+      <div class="back_arrow_padding" ui-sref="app.mainnow" >
+    <img src="img/back_arrow_small.png" class="back_arrow"/>
+  <div class="col feedback_text">FEEDBACK</div></div>
+
+  </div>
+  <ion-content class="feedback_padding">
+	<div align="left">
+
+
+        <div class="row list list-inset">
+          <div class="col">
+              <label class="item feedback_input">
+                <input type="text" ng-if="currentuser == undefined" placeholder="Name" ng-model="feedback.name"/>
+                <input type="text" ng-if="currentuser != undefined" readOnly placeholder="feedback.name" ng-model="feedback.name"/>
+              </label>
+              <br/>
+              <label class="item feedback_input">
+                <input type="email" ng-if="currentuser == undefined" placeholder="Email Id" ng-model="feedback.emailid"/>
+                <input type="email" ng-if="currentuser != undefined" readOnly placeholder="feedback.emailid" ng-model="feedback.emailid"/>
+              </label>
+              <br/>
+                <label class="item feedback_input item-select">
+                  <div class="input-label">
+                    <span class="feedbacktype">Type</span>
+                  </div>
+                  <select ng-model="feedback.type">
+                    <option selected>Select Type</option>
+                    <option value = "0">Suggestion</option>
+                    <option value = "1">Enhancement</option>
+                    <option value = "2">Performance</option>
+                    <option value = "3">Bug</option>
+                    <option value = "4">Crash</option>
+                  </select>
+              </label>
+              <br/>
+              <label class="item feedback_input textarea-input-feedback">
+                <textarea style="width:100%"  placeholder="Feedback" rows="8" cols="6" ng-model="feedback.description"></textarea>
+              </label>
+              <br/>
+              <button class="button button-full button-calm popup_button" ng-click="SubmitFeedback()">
+                SUBMIT
+              </button>
+              <br/>
+          </div>
+        </div>
+   </div>
+
+  </ion-content>
+</ion-view>
+<ion-slide>

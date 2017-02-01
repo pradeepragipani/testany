@@ -1,0 +1,152 @@
+<script>
+
+    $(function () {
+
+        $("#availability").ionRangeSlider({
+            hide_min_max: true,
+            keyboard: true,
+            min: 0,
+            max: 12,
+            from: 3,
+            // to: 24,
+            type: 'single',
+            step: 0.5,
+            // onChange: function (data) {
+            //     console.log("onChange");
+            // },
+            postfix: "Hrs",
+            grid: true
+        });
+        $("#availability").on("change", function () {
+            var $this = $(this),
+                value = $this.prop("value");
+
+            console.log("Value: " + value);
+        });
+        // var slider = $("#range").data("ionRangeSlider");
+        // alert(slider);
+    });
+</script>
+<ion-slide>
+<ion-view>
+  <div align="left" class="row bar bar_happening">
+    <div class="col-50" ui-sref="hapendtime">
+      <i class="icon ion-android-arrow-back back_arrow_icon" ></i>
+    </div>
+
+    <div class="col-50"  ng-click="closecreatinghap()">
+      <i class="icon ion-android-close close_icon"></i>
+    </div>
+
+  </div>
+  <ion-content class="happen_cnt">
+      <ion-list>
+        <ion-item class="item-icon-right hapname_category border-top" type="item-text-wrap" ng-click="changeCategory()">
+          <div class="row">
+            <div class="col-10 col_haps">
+              <img ng-src='{{categoryiconpath}}' class="icons_img">
+            </div>
+            <div class="col-90 categoryclass col_haps">
+              <span>{{categoryname}}</span>
+            </div>
+            </div>
+       </ion-item>
+
+       <ion-item class="item-icon-right hapname_category" type="item-text-wrap" ng-click="changeHapname()">
+         <div class="row">
+           <div class="col-10 col_haps">
+              <i class="icon ion-ios-pricetag icon_size" ></i>
+           </div>
+           <div class="col-90 col_haps">
+             <span>{{hapname}}</span>
+           </div>
+
+           </div>
+      </ion-item>
+       <ion-item class="hapname_category" type="item-text-wrap" ng-click="changeDescription()">
+     <div class="row">
+       <div class="col-10 col_haps">
+           <i class="icon ion-ios-pricetag icon_size"></i>
+       </div>
+       <div class="col-90 col_haps">
+         <span>{{hapdescription}}</spans>
+       </div>
+
+       </div>
+  </ion-item>
+      <ion-item class="item-icon-right hapname_category" type="item-text-wrap" ng-click="changeLocation()">
+      <div class="row">
+        <div class="col-10 col_haps">
+            <i class="icon ion-location location_icon_top icon_size"></i>
+        </div>
+        <div class="col-90 col_haps">
+          <span>{{haploc}}</span>
+        </div>
+
+        </div>
+   </ion-item>
+   <ion-item class="item-icon-right hapname_category" ng-if="nowhap == 1"  type="item-text-wrap" ng-click="changeVisibility()">
+     <div class="row">
+       <div class="col-10 col_haps">
+           <i class="icon ion-alert icon_size"></i>
+       </div>
+       <div class="col-90 col_haps">
+         <span>Active for {{hapvisible}}h</span>
+       </div>
+
+       </div>
+  </ion-item>
+  <ion-item class="hapname_category" type="item-text-wrap" >
+    <div class="row">
+      <div class="col-10 col_haps">
+          <i class="icon ion-calendar icon_size"></i>
+      </div>
+      <div class="col-40 col_haps" ng-click="changeStartDate()">
+        <span>{{hapstartdate}}</span>
+      </div>
+      <div class="col-10 col_haps">
+         <i class="icon ion-clock icon_size"></i>
+     </div>
+     <div class="col-40 col_haps" ng-click="changeStartTime()">
+       <span>{{hapstarttime}}</span>
+     </div>
+      </div>
+ </ion-item>
+ 
+ <ion-item class="hapname_category" type="item-text-wrap">
+  <div class="row">
+    <div class="col-10 col_haps">
+        <i class="icon ion-calendar icon_size"></i>
+    </div>
+    <div class="col-40 col_haps" ng-click="changeEndDate()">
+      <span>{{hapenddate}}</span>
+    </div>
+    <div class="col-10 col_haps">
+         <i class="icon ion-clock icon_size"></i>
+     </div>
+     <div class="col-40 col_haps" ng-click="changeEndTime()">
+       <span>{{hapendtime}}</span>
+     </div>
+    </div>
+</ion-item> 
+      </ion-list>
+
+
+        <div align="center" style="padding-bottom:40px">
+
+            <h4 class="hap_header">How long before the Hap starts should it to be visible on the map?</h4>
+            <div class="col input_padding" >
+              <input type="text" id="availability">
+            </div>
+
+        </div>
+      </ion-content>
+
+      <div class="bar bar-footer">
+            <div class="title">
+              <h5 class="next_text" ng-click="moveTo()" style="color:#1791f2">NEXT <i class="icon ion-chevron-right icon_rignt" style="color:#1791f2"></i></h5>
+            </div>
+        </div>
+
+</ion-view>
+</ion-slide>

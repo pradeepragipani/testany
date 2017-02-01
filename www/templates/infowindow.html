@@ -1,0 +1,268 @@
+<ion-view>
+
+        <ion-content delegate-handle="mainScroll">
+          <ion-refresher on-refresh="doRefresh()"></ion-refresher>
+      <div >
+        <div align="left" >
+            <div class="back_arrow_padding" ng-click="previous_page()" >
+          <img src="img/back_arrow_small.png" class="back_arrow_info"/></div>
+          <img ng-src='{{hapdetails.imagepath}}' ng-style="set_Height()" class="bar_preview"/>
+
+        </div>
+
+
+            <div class="row previewmarker_color">
+              <div class="col-20">
+                <img ng-src='{{hapdetails.caticonpath}}' class="glass_icon"/>
+              </div>
+              <div align="left" class="col">
+                <h3 style="display:none;">{{hapdetails.id}}</h3>
+                <h3 class="hap_create_txt">{{hapdetails.hapname}}</h3>
+                <h4 class="f_d_txt">{{displaycategory}}</h4>
+              </div>
+            </div>
+
+            <div align="center" class="row pre_btm">
+
+              <div class="col">
+                <img src="img/invite_icon.png"/><br/>Invite
+              </div>
+              <div class="col" ng-click="deleteHap(hapdetails.id)" ng-if="usercreatedhap == 'Yes'">
+                <i class="icon ion-trash-a" style="font-size:20px;"></i><br/>Delete
+              </div>
+              <div class="col" ng-click="openPopoverReport($event)">
+                <i class="icon ion-android-more-vertical"></i>
+              </div>
+            </div>
+
+            <div align="center" class="row pre_cnt">
+              <div class="col-20">
+                  <img src="img/time_icon.png" class="time_icon_preview"/>
+              </div>
+              <div align="left" class="col">
+                <h4 class="when_txt">WHEN</h4>
+                <h6>{{hapdetails.hapbegin}} till {{hapdetails.hapend}}</h6>
+              </div>
+
+            </div>
+            <div align="center" class="row pre_cnt">
+              <div class="col-20">
+                  <img src="img/location_icon.png" class="location_icon_preview"/>
+              </div>
+              <div align="left" class="col">
+                <h4 class="where_txt">WHERE</h4>
+                <h6>{{hapdetails.distance}} from you</h6>
+                <h6>{{hapdetails.location}}</h6>
+              </div>
+              <!-- <div align="right" class="col">
+                  <img src="img/direction_icon.png" class="location_icon_preview"/>
+              </div> -->
+
+            </div>
+            <div align="center" class="row pre_cnt_bg">
+              <div class="col-20">
+                  <img src="img/user_icon.png" class="location_icon_preview"/>
+              </div>
+              <div align="left" class="col" ng-click="getHapperProfile(hapdetails.createdby)">
+
+                <h4 class="name_txt">{{hapdetails.fname}} {{hapdetails.lname}}</h4>
+
+              </div>
+              <div align="right" class="col">
+                  <img src="img/chat_icon.png" class="location_icon_preview"/>
+              </div>
+
+            </div>
+
+            <div class="des_txt">
+            <h4>DESCRIPTION</h4>
+            <p>{{hapdetails.description}}</p>
+            </div>
+
+            <h4 class="media_txt">MEDIA</h4><br/>
+            <div class=" row media_txt">
+            <div class="col">
+                <img ng-src='{{hapdetails.imagepath}}' style="width:100%;height:200px;"/>
+            </div>
+            <!-- <div class="col">
+              <span class="media_img">&nbsp;</span>
+            </div>
+            <div class="col">
+                <span class="media_img">&nbsp;</span>
+            </div>
+            <div class="col">
+                  <span class="media_img">&nbsp;</span>
+            </div>
+            <div class="col">
+                  <span class="media_img">&nbsp;</span>
+            </div> -->
+            </div>
+            <h4 class="ratings_txt">RATINGS</h4><br/>
+            <div class=" row media_txt">
+            <div class="col-40">
+                <img ng-src='{{totalratingimg}}' class="ratings_img"/>
+                <h3>{{total}}</h3>
+            </div>
+            <div class="col-60">
+                <div class="row">
+                  <div class="col-20">
+                      <h4>{{RSurprised}}</h4>
+                </div>
+                  <div class="col-40">
+                <img src="img/smiley_1.png" />
+                </div>
+                <div class="col-40" style="height:30px;margin-top: 10px;border-radius: 0px 10px 10px 0px; width:{{RSurprised}}%; transition: width 0.001s; background-color: #85C352;">&nbsp;</div>
+                </div>
+                <div class="row">
+                  <div class="col-20">
+                      <h4>{{RInterested}}</h4>
+                </div>
+                  <div class="col">
+                <img src="img/smiley_2.png" />
+                </div>
+                <div class="col-40" style="height:30px;margin-top: 10px;border-radius: 0px 10px 10px 0px; width:{{RInterested}}%; transition: width 0.001s; background-color: #DCDC49;">&nbsp;</div>
+                </div>
+                <div class="row">
+                  <div class="col-20">
+                      <h4>{{RHappy}}</h4>
+                </div>
+                  <div class="col">
+                <img src="img/smiley_3.png" />
+                </div>
+                <div class="col-40" style="height:30px;margin-top: 10px;border-radius: 0px 10px 10px 0px; width:{{RHappy}}%; transition: width 0.001s; background-color: #FFEA4E;">&nbsp;</div>
+                </div>
+                <div class="row">
+                  <div class="col-20">
+                      <h4>{{RSad}}</h4>
+                </div>
+                  <div class="col">
+                <img ng-src="img/smiley_4.png" />
+                </div>
+                <div class="col-40" style="height:30px;margin-top: 10px;border-radius: 0px 10px 10px 0px; width:{{RSad}}%; transition: width 0.001s; background-color: #FFAC4E;">&nbsp;</div>
+                </div>
+                <div class="row">
+                  <div class="col-20">
+                      <h4>{{RAngry}}</h4>
+                </div>
+                  <div class="col">
+                <img src="img/smiley_5.png" />
+                </div>
+                <div class="col-40" style="height:30px;margin-top: 10px;border-radius: 0px 10px 10px 0px; width:{{RAngry}}%; transition: width 0.001s; background-color: #FFAC4E;">&nbsp;</div>
+                </div>
+                <div class="row">
+                  <div class="col-20">
+                      <h4>{{RAfriad}}</h4>
+                </div>
+                  <div class="col">
+                <img src="img/smiley_6.png" />
+                </div>
+                <div class="col-40" style="height:30px;margin-top: 10px;border-radius: 0px 10px 10px 0px; width:{{RAfriad}}%; transition: width 0.001s; background-color: #FF5630;">&nbsp;</div>
+                </div>
+                <div class="row">
+                  <div class="col-20">
+                      <h4>{{RDisgusted}}</h4>
+                </div>
+                  <div class="col">
+                <img src="img/smiley_7.png" />
+                </div>
+                <!-- <div class="col-40 smiley_color"> -->
+              <!-- <span class="smiley_7color" style="width:{{RDisgusted}}%;transition: width 0.1s;">&nbsp;</span> -->
+
+
+
+              <div class="col-40" style="height:30px;margin-top: 10px;border-radius: 0px 10px 10px 0px; width:{{RDisgusted}}%; transition: width 0.001s; background-color: #FC0F2A;">&nbsp;</div>
+              <!-- </div> -->
+                </div>
+            </div>
+
+            </div>
+
+
+            <h4 class="comments_txt">HOW YOU FEEL ABOUT THIS HAP?</h4><br/>
+            <div align="center" class="row rating_padding">
+            <div class="col-33 rating_bg" ng-click="showPopup('img/smiley_1.png','7','Surprised')">
+              <img src="img/smiley_1.png" class="smiley_img"/> <br>Surprised
+            </div>
+            <div class="col-33 rating_bg" ng-click="showPopup('img/smiley_2.png','6','Interested')">
+              <img src="img/smiley_2.png" class="smiley_img"/> <br>Interested
+            </div>
+            <div class="col-33 rating_bg" ng-click="showPopup('img/smiley_3.png','5','Happy')">
+              <img src="img/smiley_3.png" class="smiley_img"/> <br>Happy
+            </div>
+            </div>
+
+            <div align="center" class="row rating_padding">
+            <div class="col-33 rating_bg" ng-click="showPopup('img/smiley_4.png','4','Sad')">
+              <img src="img/smiley_4.png" class="smiley_img"/> <br>Sad
+            </div>
+            <div class="col-33 rating_bg" ng-click="showPopup('img/smiley_6.png','3','Angry')">
+              <img src="img/smiley_6.png" class="smiley_img"/> <br>Angry
+            </div>
+            <div class="col-33 rating_bg" ng-click="showPopup('img/smiley_5.png','2','Afriad')">
+              <img src="img/smiley_5.png" class="smiley_img"/> <br>Afriad
+            </div>
+            </div>
+
+            <div align="center" class="row rating_padding">
+            <div class="col-33 rating_bg_blank">
+              &nbsp;
+            </div>
+            <div class="col-33 rating_bg" ng-click="showPopup('img/smiley_7.png','1','Disgusted')">
+              <img src="img/smiley_7.png" class="smiley_img"/> <br>Disgusted
+            </div>
+            <div class="col-33 rating_bg_blank">
+
+            </div>
+            </div>
+
+
+
+            <h4 class="comments_txt">COMMENTS</h4><br/>
+            <div ng-init="limit = 2">
+            <div align="center" class="row bottom_padding" ng-repeat="data in listcomments | limitTo: limit as results">
+              <div class="col">
+                <img ng-src='{{data.profile_pic}}' style="width:40px;height:40px;"/>
+              </div>
+              <div align="left" class="col">
+                <p><b>{{data.fname}} {{data.lname}}</b></p>
+                <p>{{data.title}}</p>
+                <p>{{data.comments}}</p>
+              </div>
+              <div class="col" >
+                <img src='img/smiley_1.png' ng-show='{{data.rating}} == 7' style="width:40px;height:40px;"/>
+                <img src='img/smiley_2.png' ng-show='{{data.rating}} == 6' style="width:40px;height:40px;"/>
+                <img src='img/smiley_3.png' ng-show='{{data.rating}} == 5' style="width:40px;height:40px;"/>
+                <img src='img/smiley_4.png' ng-show='{{data.rating}} == 4' style="width:40px;height:40px;"/>
+                <img src='img/smiley_5.png' ng-show='{{data.rating}} == 3' style="width:40px;height:40px;"/>
+                <img src='img/smiley_6.png' ng-show='{{data.rating}} == 2' style="width:40px;height:40px;"/>
+                <img src='img/smiley_7.png' ng-show='{{data.rating}} == 1' style="width:40px;height:40px;"/>
+              </div>
+
+            </div>
+          </div>
+            <div align="center" class="row">
+              <div class="col">
+                 <span class="showmore_txt" ng-hide="results.length === listcomments.length" ng-click="limit = limit +2" >SHOW MORE</span>
+
+               </div>
+
+            </div>
+      </div>
+
+        </ion-content>
+        <div align="center" class="bar bar-footer infowindow_footer">
+          <div class="row">
+
+            <div class="col-50">
+            <!-- <button class="preview_txt share_button" ng-click="share()">SHARE</button> -->
+            <button class="preview_txt share_button" ng-click="sharenative()" >SHARE</button>
+            </div>
+            <div class="col" ng-if="hapdetails.createdby != user">
+              <button class="button button-full button-calm follow_button" ng-if="hapdetails.is_follow_hap == 'No'" ng-click="followhap()">FOLLOW</button>
+             <button class="button button-full button-calm follow_button" ng-if="hapdetails.is_follow_hap == 'Yes'" ng-click="unfollowhap()">UNFOLLOW</button>
+            </div>
+
+        </div>
+      </div>
+
+</ion-view>

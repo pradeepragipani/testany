@@ -1,0 +1,66 @@
+<ion-view style="background:#E4E4E4;">
+	<div align="center">
+		<!-- <img src="img/fluidGraph.png" class="bgInProfile"> -->
+		<img src="{{image}}" ui-sref="editprofile" class="imageInProfile">
+		<p>Some Name</p>
+	</div>
+	<ion-item style="top: 40px;padding: 10px 10px 10px 10px;background: none;position: absolute;width: 100%;">
+			<div class="row">
+				<div class="col-75" style="padding:12px 0 0 0;">
+					<input  type="search" placeholder="Search by firstname" class="searchhapsfollowing" ng-model="obj.searchFollowingTxt" style="position: absolute;background-color: #fff;
+		    z-index: 999; width: 70%; border-radius: 8px;border:1px solid #cccccc;">
+				</div>
+				<div class="col-20" style="padding:3px 0 0 10px;">
+					<button class="button button-block button-positive button_ok" style="left: 15px; width:100%; min-height:30px!important;line-height:20px; margin-top:10px;"
+					ng-click="searchFollowing()">OK</button>
+				</div>
+			</div>
+			<!-- <div align="left">
+			<h2 style="margin-top: 135px;">Some Name</h2>
+		</div> -->
+		</ion-item>
+
+			<!--<div class="row">
+			<div class="col">
+				<button class="button button-invite"  style="z-index:999;">DIDN'T FIND YOUR FRIENDS? INVITE THEM</button>
+
+			</div>
+		</div>-->
+	<div style="clear:both;"></div>
+<ion-content class="following_bg" style="height: 100%; top:222px; background-color: #E4E4E4 !important;">
+
+		<div style="margin-top:50px;">&nbsp;</div>
+	<div style="margin-bottom: 100px;">
+	<!-- <div class="row">
+		<div class="col">
+			<input type="search" placeholder="Search by firstname" class="searchhapsfollowing" ng-model="search"/>
+		</div>
+		<span style="color:#fff;">	OR </span>
+				<div class="col-50">
+			<input type="search" placeholder="Search by lastname" class="searchhapsfollowing" ng-model="search.lname"/>
+		</div>
+	</div> -->
+			<div class="row padding-following_top" ng-repeat="data in listExperts ">
+	    <div align="left" class="col-60 ">
+	      <img ng-src='{{data.profile_pic}}' class="userfollow_img"/><span >{{data.fname}}</span>
+	    </div>
+
+			<div class="col-40" ng-if="data.isfollowed == 'no'">
+				<!--<button ng-click="followUser(data.id)" class="button button-full button-calm button_following">FOLLOW</button>-->
+				<ion-toggle style="margin-bottom: 5px" class="toggle toggle-positive" ng-click="followUser(data.id)" ng-model="isChecked" ng-checked="false"></ion-toggle>
+	    </div>
+	    <div class="col-40" ng-if="data.isfollowed == 'yes'">
+				<!--<button ng-click="unfollowUser(data.id)" class="button button-full button-calm button_following">UNFOLLOW</button>-->
+	  	<ion-toggle style="margin-bottom: 5px" class="toggle toggle-positive" ng-click="unfollowUser(data.id)" ng-model="isChecked" ng-checked="true"></ion-toggle>
+	    </div>
+	  	</div>
+
+
+
+
+
+
+			</div>
+  </ion-content>
+
+</ion-view>

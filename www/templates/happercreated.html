@@ -1,0 +1,122 @@
+<ion-view>
+<ion-content class="info_bg">
+	<div class="row" ng-repeat="items in viewhaps" ng-if="$index % 2 === 0">
+		<div class="col">
+	<div class="card" >
+  <div class="item item-text-wrap" ng-click="clickedonHap({{viewhaps[$index].id}})">
+		<div class="row">
+			<div class="col-20">
+				<img src="img/academy_learning_icon.png" class="icons_img_myhaps">
+				</div>
+				<div class="col-80">
+				<span class="catagory_myhaps text_truncate">{{viewhaps[$index].catgory}}</span>
+			</div>
+			</div>
+
+			<br/>
+
+			<div align="left">
+      <h2 class="hap_name_myhaps text_truncate">{{viewhaps[$index].hapname}}</h2>
+    </div>
+		<br/>
+    <div class="row" align="left">
+			<div class="col-20">
+      <img src="img/time_icon.png" class="time_icon_myhaps"/>
+			</div>
+			<div class="col-80">
+			<span class="happening_clr_txt text_truncate">{{viewhaps[$index].showstatus}}</span>
+			</div>
+    </div>
+
+    <br/>
+    <div class="row" align="left">
+			<div class="col-20">
+      <img src="img/location_icon.png" class="time_icon_myhaps"/>
+			</div>
+			<div class="col-80">
+			<span class="happening_clr_txt text_truncate">{{viewhaps[$index].location}}</span>
+			</div>
+    </div>
+    <br/>
+		<hr/>
+      <div align="center" class="row">
+        <div class="col-33">
+          <img src="img/smileynew_1.png" class="smileynew_img"/><br/>
+          <span class="num_clr">{{viewhaps[$index].count[0]}}</span>
+        </div>
+
+        <div class="col-33">
+          <img src="img/smileynew_2.png" class="smileynew_img"/><br/>
+          <span class="num_clr">{{viewhaps[$index].count[1]}}</span>
+        </div>
+
+        <div class="col-33">
+          <img src="img/smileynew_3.png" class="smileynew_img"/><br/>
+          <span class="num_clr">{{viewhaps[$index].count[2]}}</span>
+        </div>
+      </div>
+  </div>
+	</div>
+</div>
+
+
+<div class="col" >
+<div class="card" ng-show="{{viewhaps[$index+1]}}">
+<div class="item item-text-wrap" ng-click="clickedonHap({{viewhaps[$index+1].id}})">
+<div class="row">
+	<div class="col-20">
+		<img src="img/academy_learning_icon.png" class="icons_img_myhaps">
+		</div>
+		<div class="col-80">
+		<span class="catagory_myhaps text_truncate">{{viewhaps[$index+1].catgory}}</span>
+	</div>
+	</div>
+
+	<br/>
+
+	<div align="left">
+	<h2 class="hap_name_myhaps text_truncate">{{viewhaps[$index+1].hapname}}</h2>
+</div>
+<br/>
+<div class="row" align="left">
+	<div class="col-20">
+	<img src="img/time_icon.png" class="time_icon_myhaps"/>
+	</div>
+	<div class="col-80">
+	<span class="happening_clr_txt text_truncate" >{{viewhaps[$index+1].showstatus}}</span>
+	</div>
+</div>
+
+<br/>
+<div class="row" align="left">
+	<div class="col-20">
+	<img src="img/location_icon.png" class="time_icon_myhaps"/>
+	</div>
+	<div class="col-80">
+	<span class="happening_clr_txt text_truncate">{{viewhaps[$index+1].location}}</span>
+	</div>
+</div>
+<br/>
+<hr/>
+	<div align="center" class="row">
+		<div class="col-33">
+			<img src="img/smileynew_1.png" class="smileynew_img"/><br/>
+			<span class="num_clr">{{viewhaps[$index+1].count[0]}}</span>
+		</div>
+
+		<div class="col-33">
+			<img src="img/smileynew_2.png" class="smileynew_img"/><br/>
+			<span class="num_clr">{{viewhaps[$index+1].count[1]}}</span>
+		</div>
+
+		<div class="col-33">
+			<img src="img/smileynew_3.png" class="smileynew_img"/><br/>
+			<span class="num_clr">{{viewhaps[$index+1].count[2]}}</span>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+</div>
+</ion-content>
+</ion-view>

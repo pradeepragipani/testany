@@ -1,0 +1,68 @@
+<ion-view style="background:#E4E4E4;">
+	<div align="center" style="margin-top:-30px;">
+		<!-- <img src="img/fluidGraph.png" class="bgInProfile"> -->
+		<img src="{{image}}" ui-sref="editprofile" class="imageInProfile">
+		<p>Some Name</p>
+	</div>
+		<ion-item style="top: 40px;padding: 10px 10px 10px 10px;background: none;position: absolute;width: 100%;">
+		<div class="row" style="visibility:hidden;">
+			<div class="col-75" style="padding:12px 0 0 0;">
+				<input type="search" placeholder="Search" ng-model="search1" class="searchhaps" style="position: absolute;background-color: #fff;
+	    z-index: 999; width: 70%; border-radius: 8px;">
+			</div>
+			<div class="col-20" style="padding:3px 0 0 10px;">
+				<button class="button button-block button-positive button_ok" style="left: 15px; width:100%; min-height:30px!important;line-height:20px; margin-top:10px;" ng-click="searchByAll()">OK</button>
+			</div>
+		</div>
+		<!-- <div align="left">
+		<h2 style="margin-top: 135px;">Some Name</h2>
+		</div> -->
+	</ion-item>
+		<div style="clear:both;"></div>
+<ion-content class="notifications_bg" style="height: 100%; top:222px; background-color: #E4E4E4 !important;">
+
+
+	<!--<div class="row padding_user" ng-repeat="items in messages">
+
+		<div align="left" class="col-50 padding_usernotifications">
+			<span class="user_followingtxt text_truncate"><img ng-src='{{items.profile_pic}}' class="user_img" style="color:black !important"/>{{items.message}}</span>
+		</div>
+
+		<div  align="right" class="col-50 padding_usernotifications">
+			<span class="hours_txt" style="color:black !important">{{items.time}}</span>
+		</div>
+	</div>-->
+
+
+	<ion-list >
+		<div style="margin-top: 40px !important;">
+      <ion-item class="item-remove-animate item-avatar item-icon-right"  ng-repeat="items in messages" type="item-text-wrap">
+        <img ng-src="{{items.profile_pic}}">
+        <h3>{{items.message}}</h3>
+        <p style="color:#000"> {{items.time}}</p>
+
+
+
+      </ion-item>
+		</div>
+    </ion-list>
+
+
+<!--
+<div class="row padding_user">
+
+
+	<div align="left" class="col-50 padding_usernotifications">
+		<span class="user_followingtxt text_truncate">Fejoada with Samba starts in 1hr! </span>
+	</div>
+
+	<div class="col-50 padding_usernotifications">
+		<span class="hours_txt">1d</span>
+	</div>
+</div> -->
+
+
+
+
+  </ion-content>
+</ion-view>

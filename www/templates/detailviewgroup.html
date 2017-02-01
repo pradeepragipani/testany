@@ -1,0 +1,25 @@
+<ion-view >
+      <div align="left" class="row bar bar_happening">
+    <div class="col-20" ng-click="goback()" ui-sref="viewgroup.lists">
+      <i class="icon ion-android-arrow-back back_arrow_icon" ></i>
+    </div>
+    <div align="center" class="col-40" style="padding: 5px;">
+
+    </div>
+    <div align="right"  class="col-40" ui-sref="creategroup" style="padding: 5px;float:right">
+
+    </div>
+
+  </div>
+  <ion-content style="padding-top:60px">
+    <ion-list >
+      <ion-item class="item-remove-animate item-avatar item-icon-right card" ng-repeat="data in datas" type="item-text-wrap" >
+        <h2>{{data.emailid}}</h2>
+
+        <div ng-if="data.status==1">Approved</div>
+         <div ng-if="data.status==3">Pending</div>
+           <div ng-if="data.status==4">Reject</div>
+
+    </ion-list>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,31 @@
+<ion-slide>
+<ion-view view-title="REPORT">
+  <div align="left" class="bar bar-header-editprofile">
+    <img src="img/back_arrow_small.png" ui-sref="infowindow" class="back_arrow"/>
+  <div class="col editprofile_text">Message</div>
+
+  </div>
+  <ion-content class="editprofile_padding">
+	<div align="left">
+
+        <div class="list list-inset">
+
+              <label class="item item-input textarea-input">
+                <textarea placeholder="Message" ng-model="message.comment" rows="8" cols="6"></textarea>
+              </label>
+              <br/>
+              <button class="button button-full button-calm popup_button" ng-click="sendMessage()">
+              SEND
+              </button>
+              <br/>
+          </div>
+   </div>
+
+
+
+
+
+
+  </ion-content>
+</ion-view>
+<ion-slide>

@@ -1,0 +1,147 @@
+<ion-slide>
+<ion-view>
+  <div align="left" class="row bar bar_hapmappreview" ng-click="previous_page()">
+    <div class="col-33">
+      <i class="icon ion-android-arrow-back back_arrow_icon" ></i>
+    </div>
+    <div class="col-33">
+      <!-- <h5 style="float:left;color:#000;" ng-click="getHapperProfile(hapdetails.createdby)" class="text_truncate">Created by {{hapdetails.fname}} {{hapdetails.lname}}</h5> -->
+      <h5 style="float:left;color:#000;" class="text_truncate">Created by {{hapdetails.fname}}</h5>
+    </div>
+
+    <div class="col-33" >
+   <img ng-src='{{hapdetails.profile_pic}}' style="width:40px;height:40px;margin-right: 20px;float:right ;border-radius:50%;"/>
+      </div>
+
+  </div>
+  <ion-content class="happen_cnt">
+      <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap">
+        <div class="row">
+          <div class="col-20">
+            <img ng-src='{{hapdetails.caticonpath}}' class="icons_img">
+          </div>
+          <div class="col-60 categoryclass">
+            <p>{{displaycategory}}</p>
+          </div>
+           <div class="col-20" align="right">
+      <p>{{hapdetails.hapviews}} Views</p>
+    </div>
+          </div>
+     </ion-item>
+    </ion-list>
+      <div class="row">
+      <div align="left" class="col">
+      <h3 class="hap_name">{{hapdetails.hapname}}</h3>
+    </div>
+     
+    </div>
+
+    <div class="row">
+      <div class="col-20">
+      <img src="img/time_icon.png" class="time_icon_mappreview"/></div>
+        <div class="col-80"><span class="happening_clr">{{hapbegindate}},{{hapbegintime}}  untill  {{hapenddate}},{{hapendtime}}</span>
+</div>
+    </div>
+    <br/>
+   <div class="row">
+      <div class="col-20">
+      <img src="img/location_icon.png" class="time_icon_mappreview"/>
+      </div>
+
+      <div class="col-80">{{hapdetails.location}}</div>
+    </div>
+    <br/>
+      <div align="center" class="row">
+        <div class="col-33">
+          <img src="img/smileynew_1.png" ng-click="showPopup('img/smileynew_1.png','1','Surprised')"/><br/>
+          <span class="num_clr">{{countSmiley1}}</span>
+        </div>
+
+        <div class="col-33">
+          <img src="img/smileynew_2.png" ng-click="showPopup('img/smileynew_2.png','2','Interested')"/><br/>
+          <span class="num_clr">{{countSmiley2}}</span>
+        </div>
+
+        <div class="col-33">
+          <img src="img/smileynew_3.png" ng-click="showPopup('img/smileynew_3.png','3','Happy')"/><br/>
+          <span class="num_clr">{{countSmiley3}}</span>
+        </div>
+      </div>
+
+      <div ng-init="limit = 2">
+      <div style="	border-top:1px solid #cccccc;padding:10px;" ng-repeat="data in listcomments | limitTo: limit as results" ng-if="data.comments">
+      <div align="left" style="margin-left:20px;" >
+      <img ng-src='{{data.profile_pic}}' class="comment_img"/>
+        {{data.comments}}
+      </div>
+    </div>
+    </div>
+
+  <div align="center" class="row">
+    <div class="col">
+       <span class="showmore_txt" ng-hide="results.length === listcomments.length" ng-click="limit = limit +2" >SHOW MORE</span>
+     </div>
+  </div>
+
+        <div align="center">
+          <div class="row">
+            <div class="col">
+          <img ng-src='{{hapdetails.imagepath}}' class="preview_img"/>
+        </div>
+
+          </div>
+        </div>
+
+        <div class="list padding_happreview_desc" style="margin-bottom:60px;">
+          <div class="row">
+            <div class="col">
+          <p compile="myHTML"></p>
+
+
+
+        </div>
+      </div>
+        </div>
+  </ion-content>
+  <div class="bar bar-footer bar-hapmappreview">
+    <div class="title">
+    <div class="row">
+      <div class="col-33">
+        <h5 class="share_txt" ng-click="sharenative()">SHARE</h5>
+      </div>
+
+      <div class="col-33" ng-if="hapdetails.createdby != user">
+        <h5 class="follow_txt" ng-if="hapdetails.is_follow_hap == 'No'" ng-click="followhap()">FOLLOW</h5>
+        <h5 class="follow_txt" ng-if="hapdetails.is_follow_hap == 'Yes'" ng-click="unfollowhap()">UNFOLLOW</h5>
+      </div>
+       <div class="col-33" ng-if="usercreatedhap == 'Yes'" ng-click="deleteHap(hapdetails.id)">
+
+          <h5 class="share_txt" >  DELETE</h5>
+
+
+    </div>
+    <!--<div class="col-33" ng-if="usercreatedhap != 'Yes'" ng-click="follow(hapdetails.id)">
+
+          <h5 class="share_txt" >  FOLLOW</h5>
+
+
+    </div>-->
+    <div class="col-33" ng-if="(usercreatedhap == 'Yes') && (hapdetails.hapstatus == 'upcoming') ||(usercreatedhap == 'Yes') && (hapdetails.hapstatus == 'live')" ng-click="editHap(hapdetails.id)">
+              <center>   <h5 class="share_txt"  >  EDIT </h5>
+     </center>
+
+    </div>
+    <div class="col-33" ng-if="(usercreatedhap != 'Yes')" ng-click="report(hapdetails.id)">
+              <center>   <h5 class="share_txt"  >REPORT </h5>
+     </center>
+
+    </div>
+
+    </div>
+    </div>
+  </div>
+
+
+</ion-view>
+</ion-slide>

@@ -1,0 +1,22 @@
+<ion-slide>
+  <ion-view view-title="MY HAPS" class="myhap_content">
+  <div align="left" align="center" class="bar-myhap row">
+      <div class="back_arrow_padding" ui-sref="app.mainnow">
+    <img src="img/back_arrow_small.png" class="back_arrow"/>
+  <div class="col myhap_txt">MY HAPS</div></div>
+<!-- <div class="col myhap_list"><img src="img/list_icon.png" class="list_img" ng-click="openPopoverMyhap($event)"/></div> -->
+  </div>
+  <div align="center">
+        <ion-tabs class="tabs-icon-top">
+            <ion-tab title="Saved" class="tabs-top-viewers" ng-click="gettab(1)">
+	               <ion-nav-view name="savedEvents"></ion-nav-view>
+            </ion-tab>
+            <ion-tab title="Created" class="tabs-top-saved" ng-click="gettab(2)">
+                <ion-nav-view name="createdEvents"></ion-nav-view>
+            </ion-tab>
+          </ion-tabs>
+      </div>
+  <ion-content>
+  </ion-content>
+</ion-view>
+</ion-slide>

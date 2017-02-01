@@ -1,0 +1,33 @@
+<ion-slide>
+  <ion-view view-title="USER PROFILE">
+    <div align="left" class="row bar bar_happening">
+      <div class="col-33">
+        <i class="icon ion-android-arrow-back back_arrow_icon" ui-sref="app.mainnow"></i>
+      </div>
+
+
+      <!--<div class="col-66" ui-sref="editprofile">
+
+     <img ng-src='{{image}}' style="width: 35px;height: 35px;margin-right: 20px;float:right ;border-radius:50%;"/>
+       <h5 style="float:right;color:#fff; margin-right:20px;" class="text_truncate">{{displayProfile.fname}}</h5>
+        </div>-->
+    </div>
+
+
+  <div align="center">
+    <ion-tabs class="tabs-icon-top tabs-top tabs-userprofile">
+        <ion-tab title="{{navTitle}}" class="tabs-top-saved" ng-click="usertabs(1)">
+          <ion-nav-view name="UserNotifications"></ion-nav-view>
+        </ion-tab>
+        <ion-tab title="{{navTitle2}}" class="tabs-top-saved" ng-click="usertabs(2)">
+          <ion-nav-view name="UserMyhaps"></ion-nav-view>
+        </ion-tab>
+        <ion-tab title="{{navTitle3}}" class="tabs-top-saved" ng-click="usertabs(3)">
+          <ion-nav-view name="UserFollowing"></ion-nav-view>
+        </ion-tab>
+      </ion-tabs>
+  </div>
+  <ion-content>
+  </ion-content>
+</ion-view>
+</ion-slide>

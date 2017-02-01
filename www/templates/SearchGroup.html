@@ -1,0 +1,42 @@
+<ion-view>
+  <div align="left" class="row bar bar_happening">
+    <div class="col-25">
+      <i class="icon ion-android-arrow-back back_arrow_icon" ui-sref="app.mainnow"></i>
+    </div>
+  <div class="col-75">
+    <div align="center" class="col-60" style="padding: 5px;">
+      Search Group
+    </div>
+    </div>
+  </div>
+
+  <ion-content delegate-handle="mainScroll" style="margin-top:80px;padding:0px 20px 0px 20px;">
+ <input type="text" placeholder="Search Group" ng-model="data_user.searchForce" style="width:100%;border:1px solid #cccccc; border-radius:30px;padding:10px;">
+
+      <button ng-if="data_user.searchForce.length>=3"    ng-click="datasearch()" class="button button-block button-positive">
+  Search
+</button>
+
+<div class="list" ng-if="datas.length>0">
+
+  <div class="item item-button-right" ng-repeat="data in datas">
+  {{data.groupname}}
+ <p style="margin-top: 7px"> Created By:{{data.emailid}}</p>
+    <button class="button button-positive" style="margin-right: -10px" ng-if=" data.ismember == 'Yes' " ng-click="unsubscribe(data.id)">
+    Unsubscribe
+    </button>
+      <button class="button button-light" style="margin-right: -10px" ng-if=" data.ismember == 'No' " ng-click="subscribe(data.id)">
+    Subscribe
+    </button>
+     <button class="button button-stable" style="margin-right: -10px" ng-if=" data.ismember == 'Pending' " >
+    Pending
+    </button>
+  </div>
+
+</div>
+<div ng-if="dat_len==0">
+ No Group with this search string
+    </div>
+
+  </ion-content>
+</ion-view>

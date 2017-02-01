@@ -1,0 +1,32 @@
+<ion-slide>
+  <ion-view view-title="CREATE">
+      <div align="left" class="row bar bar_happening">
+    <div class="col-33">
+      <i class="icon ion-android-arrow-back back_arrow_icon" ui-sref="app.mainnow"></i>
+    </div>
+    <div align="center" class="col-33" style="padding: 5px;">
+        CREATE
+    </div>
+    <div class="col-33">
+   
+    </div>
+  </div>
+
+  <ion-content class="createhap_padding" scrolling="no">
+
+
+    <button class="button button-full button-positive happening_button" ng-click="createhap('nowhap')" >
+      HAPPENING NOW
+    </button>
+
+    <button class="button button-full button-positive upcoming_button" ng-click="createhap('upcominghap')">
+      UPCOMING HAP
+    </button>
+
+    <button class="button button-full button-positive past_button" ng-click="createhap('pasthap')">
+      PAST HAP
+    </button>
+
+  </ion-content>
+</ion-view>
+</ion-slide>

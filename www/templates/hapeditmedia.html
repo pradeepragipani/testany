@@ -1,0 +1,50 @@
+<ion-slide>
+<ion-view>
+  <div align="left" class="row bar bar_happening">
+    <div class="col-20">
+      <i class="icon ion-android-arrow-back back_arrow_icon" ui-sref="upcominghapedit"></i>
+    </div>
+    <div align="center" class="col-60" style="padding: 5px;">
+        EDIT HAP MEDIA
+    </div>
+    <div align="center" class="col-20" style="padding: 5px;">
+        &nbsp;
+    </div>
+  </div>
+  <ion-content class="happen_cnt">
+        <h3 class="hap_header">Add a picture from</h3>
+        <div align="center" class="padding_haplocation" >
+          <div  class="row">
+            <div class="col-50" ng-click="TakePicture()">
+              <i class="icon ion-ios-camera-outline camera_icon"></i>
+                <br/>
+              <span class="camera_txt" > Camera </span>
+            </div>
+
+            <div class="col-50" ng-click="openGallery()">
+              <i class="icon ion-image image_icon"></i>
+                    <br/>
+              <span class="camera_txt" > Library </span>
+            </div>
+          </div>
+        </div>
+
+
+ <div style="width:100%;max-height:300px">
+          <img ng-src="{{image}}" />
+        </div>
+
+  </ion-content>
+
+  <div class="bar bar-footer">
+        <div class="title">
+        <div class="row">
+          <div class="col">
+            <h5 class="preview_txt" ng-click="editMedia()" style="color:#1791f2">UPDATE</h5>
+          </div>
+        </div>
+        </div>
+      </div>
+
+</ion-view>
+</ion-slide>

@@ -1,0 +1,109 @@
+<ion-slide>
+<ion-view>
+  <div align="left" class="row bar bar_happening">
+    <div class="col-20">
+      <i class="icon ion-android-arrow-back back_arrow_icon" ng-click="goBack()"></i>
+    </div>
+    <div align="center" class="col-80" style="padding: 5px;">
+        EDIT HAP DETAILS
+    </div>
+   
+  </div>
+  <ion-content class="happen_cnt">
+      <ion-list>
+      <ion-item class="hapname_category border-top" type="item-text-wrap" ng-click="editCategory()">
+        <div class="row">
+          <div class="col-10 col_haps">
+            <img ng-src='{{hapdetails.caticonpath}}' class="icons_img">
+          </div>
+          <div class="col-90 categoryclass col_haps">
+            <p>{{displaycategory}}</p>
+          </div>
+          </div>
+     </ion-item>
+
+     <ion-item class="hapname_category" type="item-text-wrap" ng-click="editHapname()">
+       <div class="row">
+         <div class="col-10 col_haps">
+            <i class="icon ion-ios-pricetag icon_size" ></i>
+         </div>
+         <div class="col-90 col_haps">
+           <p>{{hapdetails.hapname}}</p>
+         </div>
+
+         </div>
+    </ion-item>
+
+    <ion-item class="hapname_category" type="item-text-wrap" ng-click="editHapLocation()">
+      <div class="row">
+        <div class="col-10 col_haps">
+            <i class="icon ion-location location_icon_top icon_size"></i>
+        </div>
+        <div class="col-90 col_haps">
+          <p>{{hapdetails.location}}</p>
+        </div>
+
+        </div>
+   </ion-item>
+
+  <ion-item class="hapname_category" type="item-text-wrap" ng-if="disableSubmit == 1">
+     <div class="row" ng-click="hapeditdate()">
+       <div class="col-10 col_haps">
+           <i class="icon ion-calendar icon_size"></i>
+       </div>
+       <div class="col-40 col_haps">
+         <p>{{startdate}}</p>
+       </div>
+        <div class="col-10 col_haps">
+           <i class="icon ion-clock icon_size"></i>
+       </div>
+       <div class="col-40 col_haps">
+         <p>{{starttime}}</p>
+       </div>
+
+       </div>
+  </ion-item>
+  <ion-item class="hapname_category" type="item-text-wrap" ng-if="disableSubmit ==1" >
+     <div class="row" ng-click="hapeditenddate()" >
+       <div class="col-10 col_haps">
+           <i class="icon ion-calendar icon_size"></i>
+       </div>
+       <div class="col-40 col_haps">
+         <p>{{enddate}}</p>
+       </div>
+        <div class="col-10 col_haps">
+           <i class="icon ion-clock icon_size"></i>
+       </div>
+       <div class="col-40 col_haps">
+         <p>{{endtime}}</p>
+       </div>
+
+       </div>
+  </ion-item>
+</ion-list>
+        <div align="center" class="padding_happreview"  ng-click="editImage()">
+          <div class="row">
+            <div class="col">
+          <img ng-src='{{hapdetails.imagepath}}' class="preview_img"/>
+        </div>
+          </div>
+        </div>
+
+        <div class="list padding_happreview_desc" ng-click="editHapDescription()">
+          <div class="row">
+            <div class="col">
+          {{hapdetails.description}}
+
+        </div>
+      </div>
+        </div>
+
+  </ion-content>
+
+ <div class="bar bar-footer">
+        <div class="title">
+          <h5 class="next_text"  ng-click="update()" style="color:#1791f2" > DONE </h5>
+        </div>
+      </div>
+</ion-view>
+</ion-slide>

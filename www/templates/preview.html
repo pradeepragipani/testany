@@ -1,0 +1,106 @@
+<ion-slide>
+  <ion-view view-title="CREATE">
+
+
+  <ion-content>
+
+<div >
+  <img ng-src='{{image.src}}' class="bar_preview"/>
+  <div align="left" >
+      <div class="back_arrow_padding" ng-click="previous_page()" >
+    <img src="img/back_arrow_small.png" class="back_arrow_preview"/>
+</div>
+  </div>
+      <div class="row preview_color">
+        <div class="col-20">
+          <img src="img/glass_icon.png" class="glass_icon"/>
+        </div>
+        <div align="left" class="col">
+          <h3 style="display:none;">{{test.hapid}}</h3>
+          <h3 class="hap_create_txt">{{test.hapname}}</h3>
+          <h4 class="f_d_txt">{{test.catname}}</h4>
+        </div>
+      </div>
+
+      <div align="center" class="row pre_btm">
+        <div class="col">
+          <img src="img/edit_icon.png"/><br/>Edit
+        </div>
+        <div class="col">
+          <img src="img/invite_icon.png"/><br/>Invite
+        </div>
+        <div class="col">
+          <i class="icon ion-android-more-vertical"></i>
+        </div>
+      </div>
+
+      <div align="center" class="row pre_cnt">
+        <div class="col-20">
+            <img src="img/time_icon.png" class="time_icon_preview"/>
+        </div>
+        <div align="left" class="col">
+          <h4 class="when_txt">WHEN</h4>
+          <h6>{{test.hapbegin}}</h6>
+        </div>
+
+      </div>
+      <div align="center" class="row pre_cnt">
+        <div class="col-20">
+            <img src="img/location_icon.png" class="location_icon_preview"/>
+        </div>
+        <div align="left" class="col">
+          <h4 class="where_txt">WHERE</h4>
+          <h6>50m from you</h6>
+          <h6>{{test.location}}</h6>
+        </div>
+        <div align="right" class="col">
+            <img src="img/direction_icon.png" class="location_icon_preview"/>
+        </div>
+
+      </div>
+      <div align="center" class="row pre_cnt_bg">
+        <div class="col-20">
+            <img src="img/user_icon.png" class="location_icon_preview"/>
+        </div>
+        <div align="left" class="col">
+
+          <h4 class="name_txt" >{{username}}</h4>
+
+        </div>
+        <div align="right" class="col">
+            <img src="img/chat_icon.png" class="location_icon_preview"/>
+        </div>
+
+      </div>
+
+      <div class="des_txt">
+      <h4>DESCRIPTION</h4>
+      <p>{{test.description}}</p>
+      </div>
+
+      <h4 class="media_txt">MEDIA</h4><br/>
+      <div class=" row media_txt">
+      <div>
+          <img ng-src='{{image.src}}' id="myImage" style="width:100%;height:100%;"/>
+      </div>
+
+      </div>
+
+
+</div>
+
+  </ion-content>
+  <div align="center" class="bar bar-footer happening_footer">
+    <div class="row">
+
+      <div class="col-50" ng-click="share()">
+      <span class="preview_txt">DRAFT</span>
+      </div>
+      <!-- <div class="col-50" ng-click="share()">
+      <span class="preview_txt">PUBLISH</span>
+      </div> -->
+
+
+  </div></div>
+</ion-view>
+</ion-slide>

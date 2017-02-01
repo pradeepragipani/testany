@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/ion.rangeSlider.css">
+    <link rel="stylesheet" href="css/ion.rangeSlider.skinFlat.css">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/ion.rangeSlider.js"></script>
+
+<!--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places,geometry&amp;sensor=false"></script>-->
+ <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB16sGmIekuGIvYOfNoW9T44377IU2d2Es&sensor=true"></script>-->
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB16sGmIekuGIvYOfNoW9T44377IU2d2Es&libraries=geometry,places">
+</script>
+
+<script src="js/oms.js"></script>
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+    <!-- for input-chips  -->
+  <link rel="stylesheet" href="lib/ng-tags-input/ng-tags-input.min.css">
+    <!-- ionic/angularjs js -->
+
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+<script>
+  var mydate;
+  </script>
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="lib/ionic/js/ng-cordova.min.js"></script>
+    <script src="cordova.js"></script>
+    <link rel="stylesheet" href="lib/angular-circular-timepicker/dist/stylesheets/angular.circular.timepicker.css">
+<script src="lib/moment/moment.js"></script>
+<script src="lib/angular-circular-timepicker/dist/javascript/angular.circular.timepicker.js"></script>
+    <script src="lib/onezone-datepicker/dist/onezone-datepicker.min.js"></script>
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/angular-clockpicker-master/angular-clockpicker.js"></script>
+    <link rel="stylesheet" href="lib/angular-clockpicker-master/angular-clockpicker.css">
+
+    <script src="js/openfb.js"></script>
+    <script src="js/ngopenfb.js"></script>
+    <!--<script src="js/map.js"></script>-->
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+
+    <script src="js/controllers.js"></script>
+    <script src="js/CreateController.js"></script>
+    <script src="js/LoginController.js"></script>
+    <script src="js/CategoryController.js"></script>
+    <script src="js/ForgotPwdController.js"></script>
+    <script src="js/MainNowController.js"></script>
+    <script src="js/PreviewController.js"></script>
+    <script src="js/ProfileRatingController.js"></script>
+    <script src="js/InfoController.js"></script>
+
+    <script src="js/FollowController.js"></script>
+    <script src="js/ProfileController.js"></script>
+
+    <script src="js/HapNameController.js"></script>
+    <script src="js/HapLocationController.js"></script>
+    <script src="js/HapDateController.js"></script>
+    <script src="js/HapEndDateController.js"></script>
+    <script src="js/HapAvailabilityController.js"></script>
+    <script src="js/HapVisibleController.js"></script>
+    <script src="js/HapDescriptionController.js"></script>
+    <script src="js/HapMediaController.js"></script>
+    <script src="js/HapPreviewController.js"></script>
+    <script src="js/UserprofileController.js"></script>
+    <script src="js/HapEditController.js"></script>
+
+    <script src="js/services.js"></script>
+    <script src="js/CategoryService.js"></script>
+    <script src="js/ViewHapsService.js"></script>
+    <script src="js/FollowService.js"></script>
+
+    <script src="lib/ng-tags-input/ng-tags-input.min.js"></script>
+    <script src="js/ionic-close-popup.js"></script>
+   
+    <script src="js/autocomplete.js"></script>
+     <script src="js/listview.js"></script>
+    <script src="js/GroupController.js"></script>
+     <script src="js/GroupService.js"></script>
+     <script src="js/haptypeController.js"></script>
+   
+    <!--date and time-->
+    <script src="lib/ionic-datepicker/dist/ionic-datepicker.bundle.min.js"></script>
+   <script src="lib/ionic-timepicker/dist/ionic-timepicker.bundle.min.js"></script>
+    <script src="lib/angulargrid/angulargrid.js"></script>
+<!--<script src="markerclusterer.min.js"></script>-->
+    <!--date and time-->
+
+    <script type="text/javascript" src="markerclusterer.js"></script>
+    <script type="text/javascript" src="https://checkout.stripe.com/checkout.js"></script>
+   <script src="bower_components/angular-stripe-checkout/angular-stripe-checkout.js"></script>
+
+    <script>
+
+       window.fbAsyncInit = function() {
+         FB.init({
+           appId      : '228179270848011',
+           xfbml      : true,
+           version    : 'v2.5'
+         });
+       };
+
+       (function(d, s, id){
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) {return;}
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/sdk.js";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+  function urlify(text) {
+    var urlRegex = /(https?:\/\/[^\s]+)/g;
+    return text.replace(urlRegex, function(url) {
+       return '<a href="#" ng-click="sriteja()" >' + url + '</a>';
+    })
+    // or alternatively
+    // return text.replace(urlRegex, '<a href="$1">$1</a>')
+}
+
+
+       var url="http://40.114.255.43/demo/" ;
+      
+    </script>
+  <style type="text/css">
+.platform-ios .manual-ios-statusbar-padding{
+padding-top:20px;
+}
+.manual-remove-top-padding{
+padding-top:0px;
+}
+.manual-remove-top-padding .scroll{
+padding-top:0px !important;
+}
+</style>
+  </head>
+
+  <body ng-app="starter">
+    <ion-nav-view>
+    </ion-nav-view>
+  </body>
+</html>

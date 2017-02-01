@@ -1,0 +1,57 @@
+
+<ion-view>
+
+  <ion-content>
+    <img src="img/back_arrow_small.png" ui-sref="app.mainnow" class="back_arrow_login"/>
+  <div align="center" class="bg_login">
+    <img src="img/anyhap_logo.png" class="anyhap_logo_login"/>
+</div>
+
+
+
+  <!-- Tab 1 content -->
+  <div class="padding login_padding">
+
+
+
+   <div class="list list-inset">
+
+  <label class="item item-input">
+    <input type="text" ng-model="loginp.uname" placeholder="LOGIN">
+  </label>
+  <br/>
+  <label class="item item-input">
+    <input type="password" ng-model="loginp.password" placeholder="PASSWORD" ui-show-password required>
+  </label>
+
+  
+  <br/>
+  <!-- <div align="center"> -->
+  <!--<ion-checkbox ng-model="loginp.remember">Remember me</ion-checkbox>-->
+<!-- </div> -->
+  <br/>
+
+  <div>
+        <button class="button button-block button-positive button_ok" ng-click="login()" >OK</button>
+      </div>
+	  <br>
+    <center><span>or login with</span></center>
+
+</div>
+ <div align="center" class="social_icons_login">
+    <img src="img/fb.gif" ng-click="fbLogin()" class="social_icons"/>
+   <!--<img src="img/g+.ico" ng-click="googleSignIn()" class="social_icons"/>-->
+     <br/>
+
+    </div>
+ <div align="center">
+        <a href="#" ui-sref="forgot"><p class="frgt_pwd" >FORGOT?</p></a>
+      </div>
+
+        <div>
+          <button class="button button-block button-positive button_signup" ui-sref="signup">New here? Sign up!</button>
+          </div>
+          <br/>
+   </div>
+  </ion-content>
+</ion-view>

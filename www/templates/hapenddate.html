@@ -1,0 +1,109 @@
+<ion-slide>
+<ion-view>
+  <div align="left" class="row bar bar_happening">
+    <div class="col-20"  ng-click="changeStartDate()">
+      <i class="icon ion-android-arrow-back back_arrow_icon"></i>
+    </div>
+    <div align="center" class="col-60" style="padding: 5px;">
+        HAP END 
+    </div>
+    <div class="col-20"  ng-click="closecreatinghap()">
+      <i class="icon ion-android-close close_icon"></i>
+    </div>
+
+  </div>
+  <ion-content class="happen_cnt">
+      <ion-list>
+        <ion-item class="hapname_category border-top" type="item-text-wrap">
+          <div class="row">
+            <div class="col-10 col_haps">
+              <img ng-src='{{categoryiconpath}}' class="icons_img">
+            </div>
+            <div class="col-90 categoryclass col_haps">
+              <span>{{categoryname}}</span>
+            </div>
+            </div>
+       </ion-item>
+
+       <ion-item class="hapname_category" type="item-text-wrap">
+         <div class="row">
+           <div class="col-10 col_haps">
+              <i class="icon ion-ios-pricetag icon_size" ></i>
+           </div>
+           <div class="col-90 col_haps">
+             <span>{{hapname}}</span>
+           </div>
+
+           </div>
+      </ion-item>
+       <ion-item class="hapname_category" type="item-text-wrap" ng-click="changeDescription()">
+     <div class="row">
+       <div class="col-10 col_haps">
+           <i class="icon ion-ios-pricetag icon_size"></i>
+       </div>
+       <div class="col-90 col_haps">
+         <span>{{hapdescription}}</spans>
+       </div>
+
+       </div>
+  </ion-item>
+      <ion-item class="hapname_category" type="item-text-wrap">
+      <div class="row">
+        <div class="col-10 col_haps">
+            <i class="icon ion-location location_icon_top icon_size"></i>
+        </div>
+        <div class="col-90 col_haps">
+          <span>{{haploc}}</span>
+        </div>
+
+        </div>
+   </ion-item>
+  <ion-item class="hapname_category" type="item-text-wrap">
+    <div class="row" ng-click="changeStartDate()">
+      <div class="col-10 col_haps">
+          <i class="icon ion-calendar icon_size"></i>
+      </div>
+      <div class="col-40 col_haps" >
+        <span>{{showstartdate}}</span>
+      </div>
+      <div class="col-10 col_haps">
+         <i class="icon ion-clock icon_size"></i>
+     </div>
+     <div class="col-40 col_haps" >
+       <span>{{hapstarttime}}</span>
+     </div>
+      </div>
+ </ion-item>
+
+      </ion-list>
+
+
+        <div align="center" style="padding-bottom:50px">
+
+            <h4 class="hap_header" ng-if="uphap == 1">When will the Hap end?</h4>
+            <h4 class="hap_header" ng-if="pasthap == 1">When did the Hap end?</h4>
+            <div class="col">
+            <!--<onezone-datepicker datepicker-object="onezoneDatepicker">
+              <button class="button button-block button-outline show-onezone-datepicker">
+                      {{onezoneDatepicker.date | date:'dd MMMM yyyy'}}
+                  </button>
+                    </onezone-datepicker>-->
+            </div>
+      <circulartimepicker id="datapick1"  ng-model="data1.date1"></circulartimepicker>
+        </div>
+        <div align="center" style="color:red" ng-if="uphap == 1">
+          Haps which show as ongoing for more than 12 hours cost $1 per initiated 24 hour period. We charge you, to make sure Haps are fresh. All profit goes to funds for charity.
+        </div>
+
+
+
+      </ion-content>
+
+      <div class="bar bar-footer">
+            <div class="title">
+              <h5 class="next_text" ng-click="moveTo()" style="color:#1791f2">NEXT <i class="icon ion-chevron-right icon_rignt" style="color:#1791f2"></i></h5>
+            </div>
+        </div>
+
+</ion-view>
+</ion-slide>

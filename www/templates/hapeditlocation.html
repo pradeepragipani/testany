@@ -1,0 +1,52 @@
+<ion-slide>
+<ion-view>
+  <div align="left" class="row bar bar_happening">
+    <div class="col-20">
+      <i class="icon ion-android-arrow-back back_arrow_icon" ui-sref="upcominghapedit"></i>
+    </div>
+    <div align="center" class="col-60" style="padding: 5px;">
+        EDIT HAP LOCATION
+    </div>
+    <div align="center" class="col-20" style="padding: 5px;">
+        &nbsp;
+    </div>
+  </div>
+  <ion-content class="happen_cnt">
+      <h3 class="hap_header">Where will the Hap take place?</h3>
+        <div class="padding_haplocation" style="padding-bottom:150px">
+
+      <ion-radio   ng-click="CurrentLocation()" style="margin-top:10px">
+         <!--<img src="" class="icons_img">-->
+        <p >Current Location</p>
+
+
+      <div class="circle_img1"></div>
+ </ion-radio>
+
+   <ion-radio   ng-click="OtherLocation()">
+          <p>Other Location</p>
+
+
+
+      <div class="circle_img1"></div>
+ </ion-radio>
+      <div class="input_padding padding" ng-if="otherlocation == 1">
+      <label class="item item-input item-input-wrapper">
+       <img src="img/location_icon_categories.png"/>
+         <input type="text" id="searchBar" placeholder="Enter Location"  class="form-control" ng-autocomplete ng-model="hapdetails.location" style="width:100%" ng-focus="disableTap()" />
+      </label>
+      </div>
+
+    </div>
+
+  </ion-content>
+
+ <div class="bar bar-footer">
+        <div class="title">
+        <h5 class="next_text" ng-show="otherlocation == 3">OK </h5>
+           <h5 class="next_text" ng-show="otherlocation == 1||otherlocation == 0" style="color:#1791f2" ng-click="editLocation()" > UPDATE </h5>
+        </div>
+      </div>
+
+</ion-view>
+</ion-slide>

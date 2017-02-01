@@ -1,0 +1,144 @@
+<ion-slide>
+<ion-view>
+  <div align="left" class="row bar bar_happening">
+    <div class="col-20">
+      <i class="icon ion-android-arrow-back back_arrow_icon" ng-click="gotohapmedia()"></i>
+    </div>
+    <div align="center" class="col-60" style="padding: 5px;">
+        HAP PREVIEW
+    </div>
+    <div class="col-20">
+      <i class="icon ion-android-close close_icon" ng-click="gotohapmedia()"></i>
+    </div>
+
+  </div>
+  <ion-content class="happen_cnt">
+      <ion-list>
+      <ion-item class="hapname_category border-top" type="item-text-wrap">
+        <div class="row">
+          <div class="col-10 col_haps">
+            <img ng-src='{{categoryiconpath}}' class="icons_img">
+          </div>
+          <div class="col-90 categoryclass col_haps">
+            <p>{{categoryname}}</p>
+          </div>
+          </div>
+     </ion-item>
+
+     <ion-item class="hapname_category" type="item-text-wrap">
+       <div class="row">
+         <div class="col-10 col_haps">
+            <i class="icon ion-ios-pricetag icon_size" ></i>
+         </div>
+         <div class="col-90 col_haps">
+           <p>{{hapname}}</p>
+         </div>
+
+         </div>
+    </ion-item>
+
+    <ion-item class="hapname_category" type="item-text-wrap">
+      <div class="row">
+        <div class="col-10 col_haps">
+            <i class="icon ion-location location_icon_top icon_size"></i>
+        </div>
+        <div class="col-90 col_haps">
+          <p>{{haploc}}</p>
+        </div>
+
+        </div>
+   </ion-item>
+
+   <ion-item class="hapname_category" ng-if="nowhap == 1" type="item-text-wrap">
+     <div class="row">
+       <div class="col-10 col_haps">
+           <i class="icon ion-alert icon_size"></i>
+       </div>
+       <div class="col-90 col_haps">
+          <p>Active for {{hapvisibility}}h</p>
+       </div>
+
+       </div>
+  </ion-item>
+  <ion-item class="hapname_category" type="item-text-wrap" ng-if="!nowhap == 1">
+     <div class="row">
+       <div class="col-10 col_haps">
+           <i class="icon ion-calendar icon_size"></i>
+       </div>
+       <div class="col-40 col_haps">
+         <p>{{showstartdate}}</p>
+       </div>
+        <div class="col-10 col_haps">
+           <i class="icon ion-clock icon_size"></i>
+       </div>
+       <div class="col-40 col_haps">
+         <p>{{starttime}}</p>
+       </div>
+
+       </div>
+  </ion-item>
+  <ion-item class="hapname_category" type="item-text-wrap" ng-if="!nowhap == 1">
+     <div class="row">
+       <div class="col-10 col_haps">
+           <i class="icon ion-calendar icon_size"></i>
+       </div>
+       <div class="col-40 col_haps">
+         <p>{{showenddate}}</p>
+       </div>
+        <div class="col-10 col_haps">
+           <i class="icon ion-clock icon_size"></i>
+       </div>
+       <div class="col-40 col_haps">
+         <p>{{endtime}}</p>
+       </div>
+
+       </div>
+  </ion-item>
+  <!--<ion-item class="hapname_category" type="item-text-wrap" ng-if="uphap == 1">
+     <div class="row">
+       <div class="col-10 col_haps">
+           <i class="icon ion-clock icon_size"></i>
+       </div>
+       <div class="col-90 col_haps">
+         <p>Show {{availability}}h before starts</p>
+       </div>
+
+       </div>
+  </ion-item>-->
+    </ion-list>
+
+
+        <div align="center" class="padding_happreview">
+          <div class="row">
+            <div class="col">
+          <img ng-src='{{hapimage}}' class="preview_img"/>
+        </div>
+          </div>
+        </div>
+
+        <div class="list padding_happreview_desc">
+          <div class="row">
+            <div class="col">
+          {{hapdescription}}
+
+        </div>
+      </div>
+        </div>
+
+  </ion-content>
+  <!--<div class="bar bar-footer">
+    <div class="title">
+    <div class="row">
+     
+
+     
+       <center> <h5 class="create_txt_bottom" ng-click="createHap()">PUBLISH</h5></center>
+      
+
+    </div>
+    </div>
+  </div>-->
+
+
+</ion-view>
+</ion-slide>

@@ -1,0 +1,43 @@
+<ion-view>
+<ion-content>
+
+	<div align="left">
+
+  <h4 style="margin-left:20px">Groups</h4>
+        <div class="row" style="padding:0px 20px 0px 20px">
+      
+          <div class="col">
+           
+           
+            <div class="card" ng-repeat="i in datas">
+              <div style="float:left">
+              <h4  style="margin-left:10px">
+            {{i.groupname}}
+           
+              </h4>
+              <p style="font-size:12px;margin:0px 0px 0px 10px !important"> Owner:{{i.groupadmin}}</p>
+             <p style="font-size:12px ;margin:0px 0px 0px 10px !important">{{i.emailid}}</p>
+             </div>
+             <div style="margin-top:20px">
+              <button ng-click="view_group(i.gid)" class="button button-calm" style="width:auto;margin:0px 10px 0px 0px !important;float:right;">View</button>
+            </div>
+            </div>
+        
+ 
+
+         
+       
+          </div>
+
+     
+		
+       
+     
+
+         
+   </div>
+   <div  ng-show="len == 0">
+         <h4> NO Groups Created Yet </h4>
+        </div>
+  </ion-content>
+</ion-view>

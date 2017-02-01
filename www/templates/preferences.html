@@ -1,0 +1,54 @@
+<ion-slide>
+  <ion-view view-title="CREATE">
+    <div align="left" class="bar bar_preferences row">
+       <div class="row back_arrow_padding" ui-sref="app.mainnow">
+        <div class="col-20"><img src="img/back_arrow_small.png" class="back_arrow"/></div>
+    <div class="col-40 preferences_txt">PREFERENCES</div>
+      <div align="right" class="col-20 save_txt" ng-click="updatePreferences()">SAVE</div>
+    </div>
+    </div>
+
+  <ion-content>
+
+<div class="padding_preferences">
+  <div class="list">
+    <!--<h5 class="header"><b>SEARCH RADIUS</b></h5>
+  <div>
+  <label class="item range range-positive" style="border: none;">
+    <input type="range" id="myRange1" value="100" ng-model = "pref.searchradius">
+ {{pref.searchradius}}
+  </label>
+  </div>
+<br/>-->
+
+<h5 class="header"><b>NOTIFICATIONS BAR (ON PHONE)</b></h5><br>
+<div align="left " class="row">
+  <div class="col-20">
+    <span class="sound_txt">Sound</span>
+  </div>
+
+  <div class="col-20">
+
+<label class="toggle toggle-positive">
+   <input ng-model="pref.sound" type="checkbox">
+   <div class="track">
+     <div class="handle"></div>
+   </div>
+</label>
+  </div>
+</button>
+</div>
+<br/>
+
+<ion-checkbox ng-model="pref.preffollowedhap" class="item item-checkbox checkbox-square food_top" > Someone followed my Hap </ion-checkbox>
+<ion-checkbox ng-model="pref.preffollowme" class="item item-checkbox checkbox-square food_top"> Someone wants to follow me </ion-checkbox>
+<ion-checkbox ng-model="pref.prefhaprating" class="item item-checkbox checkbox-square food_top"> My Hap has been rated </ion-checkbox>
+<ion-checkbox ng-model="pref.prefhapstart" class="item item-checkbox checkbox-square food_top"> Hap will start very soon </ion-checkbox>
+
+  </div>
+</div>
+
+
+  </ion-content>
+</ion-view>
+</ion-slide>

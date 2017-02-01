@@ -1,0 +1,52 @@
+<ion-slide>
+<ion-view>
+  <ion-content overflow-scroll="true" on-hold="onGesture('hold')">
+   <!-- <div align="center" class="bar bar-header">
+  <button class="button button-icon icon ion-navicon"></button>
+  <div class="row">
+   <div class="col"><img src="img/anyhap_logo.png" class="logo_anyhap"/></div>
+  <div class="col header_text">MY HAP</div>
+  <div class="col header_text" ui-sref="app.create">CREATE</div>
+
+</div>
+
+</div> -->
+<!-- <div align="center" class="bar bar-header">
+ <div class="row">
+    <div class="col sub_header tab_channels" ng-click="openPopover($event)">CHANNELS</div>
+  <div class="col sub_header tab_places" ng-click="openPopoverPlaces($event)">PLACES</div>
+  <div class="col sub_header tab_following" ng-click="openPopoverFollowing($event)">FOLLOWING</div>
+
+</div>
+</div> -->
+
+<div id="map-canvas">
+</div>
+
+
+<img src="img/current_location_icon.png" ng-click="getBackPosition()" class="current_location"/>
+  </ion-content>
+
+
+
+  <div align="center" class="bar bar-footer-mainow">
+ <div class="row">
+     <!-- <div class="col mainnow_col"><a class="button" ng-class="past_class" ng-click="markershow_hide('past')">PAST</a></div> -->
+     <div class="col mainnow_col"  ng-click="openPopoverPast($event)"><a class="button" ng-class="past_class">PAST</a></div>
+   <div class="col mainnow_col"><a class="button" ng-class="now_class" ng-click="markershow_hide('now','now_temp')">NOW</a></div>
+   <!-- <div class="col mainnow_col"><a class="button" ng-class="upcoming_class" ng-click="markershow_hide('upcoming')">UPCOMING</a></div> -->
+   <div class="col mainnow_col"  ng-click="openPopoverUpcoming($event)"><a class="button" ng-class="upcoming_class">UPCOMING</a></div>
+ </div>
+ </div>
+
+ <!-- <div align="center" class="bar bar-subfooter-mainnow">
+<div class="row">
+   <div class="col filter_icon" ui-sref="filter"><img src="img/funnel_icon.png"> </div>
+ <div class="col search_icon" ng-click="searchEvents()"><img src="img/search_icon.png"></div>
+ <div class="col list_txt" ui-sref="app.list">LIST</div>
+
+</div>
+</div>​ -->
+
+</ion-view>
+</ion-slide>

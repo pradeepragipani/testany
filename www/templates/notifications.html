@@ -1,0 +1,22 @@
+<ion-view>
+<ion-content >
+
+	<div ng-repeat="items in notifications" class="card">
+  <div class="row">
+		<div align="center" class="col-50" style="padding: 15px;">
+			<span>{{items.groupname}}</span>
+		</div>
+    	<div align="right" class="col-50">
+			<div class="col" >
+				<!--<button ng-click="groupApproval(items.id,0)" class="button button-full button-calm" style="width:auto;float:right;margin:0px 10px 0px 0px !important; ">Reject</button>
+        <button ng-click="groupApproval(items.id,1)" class="button button-full button-calm" style="width:auto;margin:0px 10px 0px 0px !important;float:right;">Accept</button>-->
+     <a ng-click="groupApproval(items.id,0)" class="button button-icon icon ion-ios-close-outline" style="width:auto;float:right;margin:0px 10px 0px 0px !important; "></a>
+		  <a ng-click="groupApproval(items.id,1)" class="button button-icon icon ion-ios-checkmark-outline" style="width:auto;float:right;margin:0px 10px 0px 0px !important; "></a>
+		 
+		  </div>   
+		</div>
+	</div>
+	</div>
+
+  </ion-content>
+</ion-view>

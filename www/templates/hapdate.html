@@ -1,0 +1,97 @@
+<ion-slide>
+<ion-view>
+  <div align="left" class="row bar bar_happening">
+    <div class="col-20"  ng-click="gotoPrevious()">
+      <i class="icon ion-android-arrow-back back_arrow_icon"></i>
+    </div>
+    <div align="center" class="col-60" style="padding: 5px;">
+        HAP START 
+    </div>
+    <div class="col-20" ng-click="closecreatinghap()">
+      <i class="icon ion-android-close close_icon" ></i>
+    </div>
+
+  </div>
+  <ion-content class="happen_cnt">
+      <ion-list>
+        <ion-item class="hapname_category border-top" type="item-text-wrap" ng-click="changeCategory()">
+          <div class="row">
+            <div class="col-10 col_haps">
+              <img ng-src='{{categoryiconpath}}' class="icons_img">
+            </div>
+            <div class="col-90 categoryclass col_haps">
+              <span>{{categoryname}}</span>
+            </div>
+            </div>
+       </ion-item>
+
+       <ion-item class="hapname_category" type="item-text-wrap" ng-click="changeHapname()">
+         <div class="row">
+           <div class="col-10 col_haps">
+              <i class="icon ion-ios-pricetag" ></i>
+           </div>
+           <div class="col-90">
+             <span>{{hapname}}</span>
+           </div>
+
+           </div>
+      </ion-item>
+       <ion-item class="hapname_category" type="item-text-wrap" ng-click="changeDescription()">
+     <div class="row">
+       <div class="col-10 col_haps">
+           <i class="icon ion-ios-pricetag icon_size"></i>
+       </div>
+       <div class="col-90 col_haps">
+         <span>{{hapdescription}}</spans>
+       </div>
+
+       </div>
+  </ion-item>
+      <ion-item class="hapname_category" type="item-text-wrap" ng-click="changeLocation()">
+      <div class="row">
+        <div class="col-10">
+            <i class="icon ion-location location_icon_top"></i>
+        </div>
+        <div class="col">
+          <span>{{haploc}}</span>
+        </div>
+
+        </div>
+   </ion-item>
+   <ion-item class="hapname_category" ng-if="nowhap == 1" type="item-text-wrap" ng-click="changeVisibility()">
+     <div class="row">
+       <div class="col-20">
+           <i class="icon ion-alert"></i>
+       </div>
+       <div class="col">
+         <span>Active for {{hapvisible}}h</span>
+       </div>
+
+       </div>
+  </ion-item>
+      </ion-list>
+
+
+        <div align="center" style="padding-bottom:50px">
+
+            <h4 class="hap_header" ng-if="uphap == 1">When will the Hap start?</h4>
+            <h4 class="hap_header" ng-if="pasthap == 1">When did the Hap start?</h4>
+            <div class="col">
+          <circulartimepicker id="datapick1"  ng-model="data1.date1"></circulartimepicker>
+            </div>
+
+        </div>
+        
+
+
+
+      </ion-content>
+
+      <div class="bar bar-footer">
+            <div class="title">
+              <h5 class="next_text" ng-click="moveTo()" style="color:#1791f2">NEXT <i class="icon ion-chevron-right icon_rignt" style="color:#1791f2"></i></h5>
+            </div>
+        </div>
+
+</ion-view>
+</ion-slide>

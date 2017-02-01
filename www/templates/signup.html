@@ -1,0 +1,84 @@
+
+<ion-view>
+
+  <ion-content>
+    <img src="img/back_arrow_small.png" ui-sref="app.mainnow" class="back_arrow_login"/>
+  <div align="center" class="bg_login">
+    <img src="img/anyhap_logo.png" class="anyhap_logo_login"/>
+</div>
+
+
+
+  <!-- Tab 1 content -->
+  <div class="padding login_padding">
+   <div class="list list-inset">
+
+  <label class="item item-input">
+    <input type="text" ng-model="data.firstname" placeholder="FIRST NAME"/>
+  </label>
+  <br/>
+  <label class="item item-input">
+    <input type="text" ng-model="data.lastname" placeholder="LAST NAME"/>
+  </label>
+  <br>
+  <label class="item item-input">
+  <input type="text" ng-model="data.username" placeholder="User Name"/>
+  </label>
+  <br>
+    <label class="item item-input">
+    <input type="email" ng-model="data.email" placeholder="E-MAIL"/>
+  </label>
+  <br>
+  <label class="item item-input">
+    <input type="password" ng-model="data.password" placeholder="PASSWORD" />
+  </label>
+  <br>
+  <label class="item item-input item-select">
+    <div class="input-label">
+      <!-- &nbsp; -->
+      Year Of Born
+    </div>
+    <select ng-model="data.yearOfBorn" ng-value="items.yearNo" ng-options="items.yearNo for items in years">
+    </select>
+  </label>
+  <br>
+  <label class="item item-input item-select">
+    <div class="input-label">
+      <!-- &nbsp; -->
+      Nationality
+    </div>
+    <select ng-model="data.nationality" ng-value="items.id" ng-options="items.cname for items in nationality">
+    </select>
+  </label>
+  <!-- <label class="item item-input">
+    <input type="text" ng-model="data.contactnumber" placeholder="CONTACT NUMBER"/>
+  </label>
+  <br> -->
+  <!-- <label class="item item-input" >
+     <div class="row">
+       <div class="col-33 gender_txt">GENDER</div>
+       <div class="col-33" >
+     <ion-radio  ng-value="0"  ng-model="data.gender" class="male_txt">MALE</ion-radio></div>
+     <div class="col-33" >
+     <ion-radio  ng-value="1"  ng-model="data.gender" class="female_txt">FEMALE</ion-radio></div>
+   </div>
+   </label> -->
+  <!--<br>
+    <label class="item item-input">
+  <input type="text" id="searchBar" ng-click="reset()" class="form-control" ng-autocomplete ng-model="data.location" style="width:100%" ng-focus="disableTap()" />
+</label>-->
+<br>
+<button ng-click="openGallery()" class="button button-full button-calm button-positive popup_button_signup">
+  ADD PROFILE PIC
+</button>
+
+  <div>
+        <button class="button button-block button-positive button_ok" ng-click="signup()">OK</button>
+      </div>
+</div>
+   </div>
+
+
+
+  </ion-content>
+</ion-view>

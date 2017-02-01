@@ -1,0 +1,52 @@
+<ion-slide>
+<ion-view view-title="Creategroup">
+  <div align="left" class="row bar bar_happening">
+    <div class="col-20" ng-click="goback()" ui-sref="app.mainnow">
+      <i class="icon ion-android-arrow-back back_arrow_icon" ></i>
+    </div>
+    <div align="center" class="col-20" style="padding: 5px;">
+     
+    </div>
+    <div align="right"  class="col-60" ui-sref="viewgroup.lists" style="padding: 5px;float:right">
+        VIEW GROUPS
+    </div>
+
+  </div>
+  <ion-content class="feedback_padding" >
+	<div align="left">
+
+
+        <div class="row list" style="padding:20px;">
+          <div class="col">
+            <h4>Group Name</h4>
+			
+              <label class="item feedback_input">
+                <input type="text" placeholder="Group Name" ng-model="group.name"/>
+
+              </label>
+              <br/>
+                <h4>Type of Group</h4>
+                <div class="list">
+                  <ion-radio ng-click="getgrouptype(2)">
+                    <span style="color:#cccccc;" >  Private</span><div class="circle_img"></div>
+                  </ion-radio>
+                  <ion-radio ng-click="getgrouptype(1)">
+                      <span style="color:#cccccc;">  Open</span><div class="circle_img"></div>
+                  </ion-radio>
+                </div>
+              <h4>Group Description</h4>
+              <label class="item feedback_input textarea-input-feedback">
+                <textarea style="width:100%"  placeholder="Group Description" rows="3" ng-model="group.Description"></textarea>
+              </label>
+              <br/>
+  <button class="button button-full button-calm popup_button" ng-click="createGroup()">
+                CREATE
+              </button>
+              <br/>
+          </div>
+        </div>
+   </div>
+
+  </ion-content>
+</ion-view>
+<ion-slide>

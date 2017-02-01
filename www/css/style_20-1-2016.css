@@ -1,0 +1,387 @@
+body{
+	font-family: Raleway!important;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+	font-family: Raleway!important;
+}
+input, button, select, textarea, span{
+	font-family: Raleway!important;
+}
+/* Login CSS Start*/
+.row{
+	padding: 0px;
+}
+.bg_login{
+	width:100%;
+	height:300px;
+	background-image:url('../img/background.png') ;
+	-webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    background-size: 100%;
+		background-position: 100%;
+}
+
+ .strip .tab-nav{
+
+	background-color: rgba(25, 25, 25, .2)!important;
+	border:0px;
+	top: 252px !important;
+
+}
+.tab-item-active{
+border-bottom:3px solid #4AD9D9;
+	opacity:1;
+
+}
+
+.tab-item{
+	    font-weight: bold;
+	color:#fff!important;
+
+}
+
+/* .signup{
+	color:#fff!important;
+	border-bottom:none;
+}
+ */
+.list-inset{
+	padding:50px;
+}
+
+.item-input{
+	border-radius:30px !important;
+}
+
+.button-positive{
+	border-radius:30px;
+	background-color:#36B1BF!important;
+}
+.frgt_pwd{
+	color:#36B1BF !important;
+
+	font-weight: bold;
+}
+a{
+	text-decoration: none !important;
+}
+
+.social_icons{
+	width:50px;
+	height:50px;
+	margin:0px 20px 0px 20px;
+}
+.custom-tab{
+	font-size:20px;
+}
+.back_arrow{
+	cursor:pointer;
+	margin-left:10px;
+	height: 22px;
+	width: 22px;
+	vertical-align: middle;
+	margin-top: 5px;
+	float: left;
+
+}
+.fgt_txt{
+	font-weight:bold;
+
+	font-size:16px;
+
+	float: left;
+	color: #fff !important;
+}
+/* Login CSS End*/
+
+/*Happening Now Start*/
+
+.bar-header{
+	background-color:#36b1bf;
+	height:45px;
+}
+.bar-myhap{
+
+    position: absolute;
+    right: 0;
+    left: 0;
+    z-index: 9;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 5px;
+    width: 100%;
+    height: 44px;
+    border-width: 0;
+		color: #fff;
+    background-color: #36b1bf;
+    /* border-width: 1px will actually create 2 device pixels on retina; */
+    background-size: 0;
+}
+.logo_anyhap{
+	width:50px;
+	height:35px;
+	margin-top:-10px;
+	float:left;
+}
+
+.logo_anyhap_innerpage{
+	float:left;
+	margin-top: -5px;
+}
+
+.header_text{
+	color:#fff!important;
+	cursor: pointer;
+}
+
+.sub_header{
+	color:#000!important;
+}
+.bar-subheader-myhap{
+	top: 50px;
+	display: block;
+	height: 44px;
+	background: #fff !important;
+	padding: 0px;
+	color:#000 !important;
+}
+.sub-footer{
+	background-color:#fff;
+	height:auto ;
+	width:100%;
+	bottom:0px;
+	position:absolute;
+	padding: 8px 0px 8px 0px;
+}
+
+.footer{
+	background-color: #F2F2F2;
+	height:auto;
+	width:100%;
+	bottom: 53px;
+	padding: 8px 0px 8px 0px;
+	position:absolute;
+}
+
+.icon{
+	font-size:30px;
+}
+
+.button-past{
+	background-color:#fff!important;
+	border:1px solid #ccc !important;
+	color:#ccc !important;
+	border-radius:30px;
+	padding:0px 10px 0px 10px;
+	line-height:30px!important;
+	    font-size: 14px !important;
+}
+
+.button-now{
+	background-color:#f2385a!important;
+	border:1px solid #f2385a!important;
+	color:#fff!important;
+	border-radius:30px;
+	padding:0px 10px 0px 10px;
+	line-height:30px!important;
+	    font-size: 14px !important;
+}
+
+.button-upcoming{
+	background-color:#ffa030!important;
+	border:1px solid #ffa030!important;
+	color:#fff!important;
+	border-radius:30px;
+	padding:0px 10px 0px 10px;
+	line-height:30px!important;
+	    font-size: 14px !important;
+}
+
+.jusdummyinfowindow{
+	padding:50px 10px 20px 10px;
+}
+
+#map_canvas {
+   position: absolute;
+   width:100%;
+   height: 100%;
+   margin: 0;
+   padding: 0;
+   z-index: -1
+}
+
+/*end*/
+
+/*create page*/
+.happening_button{
+	background:#F2385A!important;
+	padding:80px;
+	border-radius: 0px;
+}
+
+.upcoming_button{
+	background:#F5A503!important;
+	padding:80px;
+	border-radius: 0px;
+}
+
+.past_button{
+	background:#333333!important;
+	padding:80px;
+	border-radius: 0px;
+}
+
+.popup-container.active .popup{
+	background-color: #fff!important;
+	height:200px;
+	width: 300px;
+	border-radius: 10px;
+
+
+}
+.popup-head{
+	text-align: left;
+	border: none;
+
+}
+.popup-title{
+	color: #ccc;
+	font-size: 20px;
+	font-weight: normal;
+}
+.popup-buttons .button{
+	background:none;
+	color: #000;
+	vertical-align: center;
+	min-height: 25px;
+}
+.button.icon-left.camera{
+	background-image: url('../img/picture_icon.png');
+	width:50%;
+	text-align: center;
+	background-repeat: no-repeat;
+
+}
+
+.button.icon-left.video{
+	background-image: url('../img/video_icon.png');
+	width:50%;
+	vertical-align: middle;
+	background-repeat: no-repeat;
+}
+.popup-buttons {
+    min-height: 0px;
+}
+
+.icons_img{
+	border-radius: 0px!important;
+	width: auto !important;
+  height: auto !important;
+      margin-top: -5px;
+}
+.checkbox-calm input:checked:before, .checkbox-calm input:checked + .checkbox-icon:before{
+	border-color: #ccc!important;
+}
+.checkbox-calm input:before, .checkbox-calm .checkbox-icon:before{
+		border-color: #ccc!important;
+}
+.item-avatar, .item-avatar .item-content, .item-avatar-left, .item-avatar-left .item-content{
+	min-height: auto;
+}
+.item.active, .item.activated, .item-complex.active .item-content, .item-complex.activated .item-content, .item .item-content.active, .item .item-content.activated{
+	background-color:#36b1bf;
+	color:#fff !important;
+}
+
+.tabs-top-saved{
+	top:0px;
+color: #36b1bf !important;
+}
+.tabs-top-created{
+	top:0px;
+color: #36b1bf !important;
+}
+.saved-padding{
+	padding-top: 50px;
+	float: left;
+
+}
+.saved_bg{
+
+	width:100%;
+	margin-bottom: -10px;
+}
+.saved-color{
+	background-color: #F2385A;
+	width: 100%;
+	padding: 10px;
+	height: auto;
+	top:-5px;
+
+}
+.saved-color h4,h5{
+	color: #fff;
+	text-align: left;
+}
+.saved-color-bottom{
+	background-color: #fff;
+	height: auto;
+	padding: 10px;
+	border: 1px solid #ccc;
+}
+.saved-icons{
+	vertical-align:middle;
+	width:16px;
+	padding-right: 5px;
+}
+.saved-bottom-cont{
+	text-align: left;
+}
+
+
+.created-padding{
+	padding-top: 55px;
+	float: left;
+
+}
+.created_bg{
+margin-bottom: -10px;
+	width:100%;
+
+}
+.created-color{
+	background-color: #36b1bf;
+	width: 100%;
+	padding: 10px;
+	height: auto;
+	top:-5px;
+
+}
+.created-color h4,h5{
+	color: #fff;
+	text-align: left;
+}
+.created-color-bottom{
+	background-color: #fff;
+	height: auto;
+	padding: 10px;
+	border: 1px solid #ccc;
+}
+.created-icons{
+	vertical-align:middle;
+	width:16px;
+	padding-right: 5px;
+}
+.created-bottom-cont{
+	text-align: left;
+}
+.tabs-top-created{
+	top:0px;
+ color: #ccc !important;
+}
+
+.tabs-top-created: active{
+	top:0px;
+ color: #36b1bf !important;
+}

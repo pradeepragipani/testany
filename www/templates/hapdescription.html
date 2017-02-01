@@ -1,0 +1,133 @@
+<ion-slide>
+<ion-view>
+  <div align="left" class="row bar bar_happening">
+    <div class="col-20" ng-click="goback()">
+      <i class="icon ion-android-arrow-back back_arrow_icon" ></i>
+    </div>
+    <div align="center" class="col-60" style="padding: 5px;">
+        HAP DESCRIPTION
+    </div>
+    <div class="col-20" ng-click="closecreatinghap()">
+      <i class="icon ion-android-close close_icon" ></i>
+    </div>
+
+  </div>
+  <ion-content class="happen_cnt">
+      <ion-list>
+      <ion-item class="hapname_category border-top" type="item-text-wrap" ng-click="changeCategory()">
+        <div class="row">
+          <div class="col-10 col_haps">
+            <img ng-src='{{categoryiconpath}}' class="icons_img">
+          </div>
+          <div class="col categoryclass col_haps">
+            <span>{{categoryname}}</span>
+          </div>
+          </div>
+     </ion-item>
+
+     <ion-item class="hapname_category" type="item-text-wrap" ng-click="changeHapname()">
+       <div class="row">
+         <div class="col-10 col_haps">
+            <i class="icon ion-ios-pricetag icon_size" ></i>
+         </div>
+         <div class="col-90 col_haps">
+           <span>{{hapname}}</span>
+         </div>
+
+         </div>
+    </ion-item>
+
+    <!--<ion-item class="hapname_category" type="item-text-wrap" ng-click="changeLocation()">
+      <div class="row">
+        <div class="col-10 col_haps">
+            <i class="icon ion-location location_icon_top icon_size"></i>
+        </div>
+        <div class="col-90 col_haps">
+          <span>{{haploc}}</span>
+        </div>
+
+        </div>
+   </ion-item>
+
+   <ion-item class="hapname_category" type="item-text-wrap" ng-if="nowhap == 1" ng-click="changeVisibility()">
+     <div class="row">
+       <div class="col-10 col_haps">
+           <i class="icon ion-alert icon_size"></i>
+       </div>
+       <div class="col-90 col_haps">
+         <span>Active for {{hapvisibility}}h</span>
+       </div>
+
+       </div>
+  </ion-item>
+  <ion-item class="hapname_category" type="item-text-wrap" ng-if="!nowhap == 1">
+     <div class="row">
+       <div class="col-10 col_haps">
+           <i class="icon ion-calendar icon_size"></i>
+       </div>
+       <div class="col-40 col_haps" ng-click="changeStartDate()">
+         <span>{{startdate}}</span>
+       </div>
+        <div class="col-10 col_haps">
+           <i class="icon ion-clock icon_size"></i>
+       </div>
+       <div class="col-40 col_haps" ng-click="changeStartTime()">
+         <span>{{starttime}}</span>
+       </div>
+       </div>
+  </ion-item>
+ <ion-item class="hapname_category" ng-if="!nowhap == 1" type="item-text-wrap">
+  <div class="row">
+    <div class="col-10 col_haps">
+        <i class="icon ion-calendar icon_size"></i>
+    </div>
+    <div class="col-40 col_haps" ng-click="changeEndDate()">
+      <span>{{hapenddate}}</span>
+    </div>
+    <div class="col-10 col_haps">
+         <i class="icon ion-clock icon_size"></i>
+     </div>
+     <div class="col-40 col_haps" ng-click="changeEndTime()">
+       <span>{{hapendtime}}</span>
+     </div>
+    </div>
+</ion-item>
+
+  <ion-item class="hapname_category" type="item-text-wrap" ng-if="uphap == 1" ng-click="changeAvailability()">
+     <div class="row">
+       <div class="col-10 col_haps">
+           <i class="icon ion-clock icon_size"></i>
+       </div>
+       <div class="col-90 col_haps">
+         <span>Show {{availability}}h before starts</spans>
+       </div>
+
+       </div>
+  </ion-item>-->
+    </ion-list>
+       <!--<div class="list padding_hapname">
+          <label class="item item-input input_hapname">
+            <input type="text" ng-model="desc.hapdescription" placeholder="Description">
+          </label>
+
+        </div>-->
+        <br/>
+        <div class="list">
+
+  <label class="item item-input">
+    <textarea  ng-model="desc.hapdescription" placeholder="Tell people everything they need to know about your hap!" style="height:100px"></textarea>
+  </label>
+</div>
+
+
+
+  </ion-content>
+
+   <div class="bar bar-footer">
+            <div class="title">
+              <h5 class="next_text" ng-click="moveTo()" style="color:#1791f2">NEXT <i class="icon ion-chevron-right icon_rignt" style="color:#1791f2"></i></h5>
+            </div>
+        </div>
+
+</ion-view>
+</ion-slide>

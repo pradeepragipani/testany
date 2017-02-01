@@ -1,0 +1,49 @@
+<ion-slide>
+<ion-view>
+  <div align="left" class="row bar bar_happening">
+    <div class="col-33">
+      <i class="icon ion-android-arrow-back back_arrow_icon" ui-sref="haptype"></i>
+    </div>
+    <div align="center" class="col-33" style="padding: 5px;">
+        HAP NAME
+    </div>
+    <div class="col-33">
+      <i class="icon ion-android-close close_icon" ng-click="closecreatinghap()"></i>
+    </div>
+
+  </div>
+  <ion-content class="happen_cnt">
+      <ion-list>
+      <ion-item class="hapname_category" type="item-text-wrap" ng-click="changeCategory()">
+        <div class="row">
+          <div class="col-10 col_haps">
+            <img ng-src='{{categoryiconpath}}' class="icons_img">
+          </div>
+        <div class="col-90 col_haps">
+            <span>{{categoryname}}</span>
+          </div>
+          </div>
+     </ion-item>
+    </ion-list>
+
+      <h3 class="hap_header">Name the Hap!</h3>
+
+      <div class="list padding_hapname">
+        <label class="item item-input input_hapname">
+          <input type="text" ng-model="name.hapname" placeholder="Hap Name">
+        </label>
+
+      </div>
+
+      <div class="bar bar-footer">
+        <div class="title">
+          <h5 class="next_text" ng-hide="name.hapname" >NEXT <i class="icon ion-chevron-right icon_rignt"></i></h5>
+          <h5 class="next_text" ng-show="name.hapname" style="color:#1791f2" ng-click="moveTo()" >NEXT <i class="icon ion-chevron-right icon_rignt" style="color:#1791f2"></i></h5>
+        </div>
+      </div>
+  </ion-content>
+
+
+
+</ion-view>
+</ion-slide>

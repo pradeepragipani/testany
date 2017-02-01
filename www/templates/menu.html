@@ -1,0 +1,173 @@
+<ion-slide>
+<ion-side-menus enable-menu-with-back-views="true">
+  <ion-side-menu-content drag-content="false">
+
+    <!-- <ion-nav-bar class="bar-stable-mainnow">
+       <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+          <img src="img/anyhap_logo.png" style="width: 50PX;
+    margin-top: -5px;"/>
+        </button>
+   <div class="logo"></div>
+      </ion-nav-buttons>
+      <ion-nav-title>
+          <div class="header_text myhap_padding" ui-sref="myhap" href="#/myhap">MY HAPS</div>
+      </ion-nav-title>
+      <ion-nav-buttons side="right">
+      <div class="header_text create_padding" ui-sref="create" href="#/create">CREATE</div>
+      </ion-nav-buttons>
+    </ion-nav-bar> -->
+    <!-- <div class="row bar-stable-mainnow">
+        <div class="col-20">
+          <button class="button button-icon button-clear ion-navicon mainnow_menu" menu-toggle="left">
+            <img src="img/anyhap_logo.png" class="mainnow_logo"/>
+          </button>
+        </div>
+         <div class="col-25" ng-click="list()">
+            <div class="header_text myhap_padding" >MY HAPS</div>
+        </div>
+      <div class="col-25">
+           <div class="header_text myhap_padding" ng-click="gotoFilter()"><i class="icon ion-funnel" style="font-size:20px; float:left;"></i></div>
+
+           <img src="img/search-icon.png" ng-click="openPopoverSearch($event)" style="width:30px;float:right;margin-top:-13px;"/>
+       </div>
+        <div class="col-25">
+          <div class="header_text create_padding" ng-click="showPopup()">CREATE</div>
+        </div>
+
+
+    </div> -->
+    <div class="row bar-stable-mainnow">
+       <!--<div class="col col_menu">
+         <button class="button button-icon button-clear ion-navicon mainnow_menu" menu-toggle="left">
+
+         </button>
+       </div>
+
+     <div class="col col_menu">
+          <div class="header_text myhap_padding" ng-click="gotoFilter()"> <img src="img/filter.png" style="width:25px;float:left;margin-left:-20px;"/></div>
+          <div class="header_text myhap_padding"><img src="img/search.png" ng-click="openPopoverSearch($event)" style="width:25px;float:right; margin-top:-20px;margin-right: -12px;"/></div>
+      </div>
+      <div class="col col_menu">
+          <div class="header_text myhap_padding"  ng-click="list()"> <img src="img/list.png" style="width:25px;float:right;"/></div>
+     </div>
+       <div class="col col_menu">
+         <div class="header_text create_padding" ng-click="showPopup()">CREATE</div>
+       </div>-->
+
+       <div class="col col_menu">
+         <button class="button button-icon button-clear ion-navicon mainnow_menu" menu-toggle="left">
+
+         </button>
+
+       </div>
+       <div align="left" class="col col_menu" ng-click="gotonotifications()">
+
+      <img src="img/anyhap_logo.png" class="mainnow_logo"/>
+      <div class="notification" ng-if="updatescount != 0"><span style="margin-top: -4px;float: left;margin-left: 4px;">{{updatescount}}</span></div>
+    </div>
+
+     <div class="col col_menu">
+          <div class="header_text myhap_padding" ng-if="isfiltercat.filled == 'empty'" ng-click="gotoFilter()"> <img src="img/filter.png" style="width:20px;margin-top:3px;"/></div>
+          <div class="header_text myhap_padding" ng-if="isfiltercat.filled == 'filled'" ng-click="gotoFilter()"> <img src="img/filterfill.png" style="width:20px;margin-top:3px;"/></div>
+      </div>
+      <div class="col col_menu">
+        <div class="header_text myhap_padding" ng-if="issearch.filled == 'empty'"><img src="img/search.png" ng-click="openPopoverSearch($event)" style="width:20px;margin-top:3px;"/></div>
+        <div class="header_text myhap_padding" ng-if="issearch.filled == 'filled'"><img src="img/searchfill.png" ng-click="openPopoverSearch($event)" style="width:20px;margin-top:3px;"/></div>
+      </div>
+      <div class="col col_menu" ng-click="list()">
+          <div class="header_text myhap_padding" > <img src="img/list.png" style="width:20px;margin-top:3px;"/></div>
+     </div>
+       <div class="col col_menu">
+         <div class="header_text create_padding" ng-click="showPopup()"><i class="icon ion-plus-round" style="font-size: 27px;"></i></div>
+       </div>
+   </div>
+
+   </div>
+
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+
+    <ion-content delegate-handle="mainScroll">
+
+
+            <div class="menu_bg" ng-click="showProfile()">
+            <div class="row">
+              <div class="col">
+                <img ng-src='{{image}}' style="width:100px; height:100px; margin-right:10px;border-radius:50%;"/>
+              </div>
+              <div class="col" ng-if="user != undefined">
+                <h4 >{{firstname}}</h4>
+                <p>{{followers}} Followers</p>
+                  <p>{{following}} Following</p>
+                    <p>{{haps}} Haps</p>
+              </div>
+            </div>
+            </div>
+
+      <ion-list >
+        <!-- <ion-item menu-close class="menu_list" ui-sref="login">
+          Login
+        </ion-item> -->
+        <ion-item menu-close class="menu_list" ng-click="gotopreferences()">
+          <img src="img/preferences_icon.png" class="pref_icon" />Preferences
+        </ion-item>
+        <!-- <ion-item menu-close class="menu_list" ui-sref="invitefriends">
+          Invite Friends
+        </ion-item> -->
+        <!-- <ion-item menu-close class="menu_list" ui-sref="worldsmost">
+          World's Most
+        </ion-item> -->
+        <!--<ion-item menu-close class="menu_list" ui-sref="charity">
+          Charity
+        </ion-item>
+        <ion-item menu-close class="menu_list" ui-sref="aboutUs">
+          About Us
+        </ion-item>-->
+         <ion-item menu-close class="menu_list"  ui-sref="viewgroup.lists" ng-if="user != undefined">
+         Groups
+        </ion-item>
+          <ion-item menu-close class="menu_list"  ui-sref="SearchGroup" ng-if="user != undefined">
+         Search Groups
+        </ion-item>
+        <ion-item menu-close class="menu_list"  ui-sref="privacyPolicy">
+          Privacy Policy
+        </ion-item>
+        <ion-item menu-close class="menu_list" ui-sref="rules">
+          The anyhap Rules
+        </ion-item>
+        <ion-item menu-close class="menu_list" ui-sref="terms">
+          Terms and Conditions
+        </ion-item>
+        <ion-item menu-close class="menu_list" ui-sref="changepassword" ng-if="(anyhapuser1 == true) && (logfb == undefined || logfb == 0)">
+          Reset Password
+        </ion-item>
+        <ion-item menu-close class="menu_list" ui-sref="feedback">
+          Feedback
+        </ion-item>
+        <ion-item menu-close class="menu_list" ng-click="shareapp()">
+          Share
+        </ion-item>
+        <ion-item menu-close class="menu_list" ng-if="user != undefined" ng-click="logoutSession()">
+          Logout
+        </ion-item>
+         <!--<ion-item menu-close class="menu_list_notifications" ng-if="user != undefined">
+          <h2>Notifications<h2>
+            <div class="list" ng-repeat="items in messages">
+              <a class="item item-avatar" href="#">
+              <img ng-src='{{items.socialprofile_pic}}'>
+              <!--<h2>{{items.fname}} {{items.lname}}</h2>
+              <p>{{items.message}}</p>
+              </a>
+              </div>
+            </ion-item>-->
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>
+</ion-slide>

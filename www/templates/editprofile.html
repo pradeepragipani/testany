@@ -1,0 +1,51 @@
+<ion-slide>
+<ion-view view-title="EDIT PROFILE">
+  <div align="left" class="bar bar-header-editprofile">
+      <div class="back_arrow_padding" ui-sref="app.mainnow" >
+    <img src="img/back_arrow_small.png" class="back_arrow"/>
+  <div class="col editprofile_text">EDIT PROFILE</div></div>
+
+  </div>
+  <ion-content class="editprofile_padding">
+	<div align="left">
+
+        <div class="row">
+          <div align="center" class="col" ng-click="openGallery()">
+            <img ng-src='{{displayexistingdata.profile_pic}}' style="width:50%;"/><br>
+            Change Profile Picture
+          </div>
+        </div>
+        <div class="row list list-inset">
+          <div class="col">
+              <label class="item item-input">
+                <input type="text" ng-model="update.firstname" placeholder="{{displayexistingdata.fname}}"/>
+              </label>
+              <br/>
+              <label class="item item-input">
+                <input type="text" ng-model="update.lastname" placeholder="{{displayexistingdata.lname}}"/>
+              </label>
+              <br/>
+                <label class="item item-input">
+                <input type="text" ng-model="update.username" placeholder="{{displayexistingdata.username}}"/>
+              </label>
+              <br/>
+              <!-- <label class="item item-input">
+                <input type="text" ng-model="update.contactnumber" placeholder="{{displayexistingdata.mobileno}}"/>
+              </label>
+              <br/> -->
+              <!-- <button class="button button-full button-calm editprofile_button">
+                CHANGE PROFILE PIC
+              </button>
+              <br/> -->
+
+              <button class="button button-full button-calm popup_button" ng-click="updateprofile()">
+                UPDATE PROFILE
+              </button>
+              <br/>
+          </div>
+        </div>
+   </div>
+
+  </ion-content>
+</ion-view>
+<ion-slide>

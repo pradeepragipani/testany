@@ -1,0 +1,29 @@
+<ion-slide>
+<ion-view>
+  <div align="left" class="row bar bar_happening">
+    <div class="col-20" ui-sref="upcominghapedit">
+      <i class="icon ion-android-arrow-back back_arrow_icon" ></i>
+    </div>
+    <div align="center" class="col-60" style="padding: 5px;">
+        EDIT HAP END 
+    </div>
+    <div align="center" class="col-20" style="padding: 5px;">
+        &nbsp;
+    </div>
+  </div>
+  <ion-content class="happen_cnt">
+        <h4 class="hap_header" >When will the Hap end?</h4>
+
+            <div class="col">
+          <circulartimepicker   ng-model="data1.date1"></circulartimepicker>
+            </div>
+  </ion-content>
+
+   <div class="bar bar-footer">
+      <div class="title">
+        <h5 class="next_text" ng-click="Editdateend()" style="color:#1791f2"> UPDATE </i></h5>
+      </div>
+  </div>
+
+</ion-view>
+</ion-slide>

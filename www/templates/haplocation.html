@@ -1,0 +1,88 @@
+<ion-slide>
+<ion-view>
+  <div align="left" class="row bar bar_happening">
+    <div class="col-20">
+      <i class="icon ion-android-arrow-back back_arrow_icon" ui-sref="hapdescription"></i>
+    </div>
+    <div align="center" class="col-60" style="padding: 5px;">
+        HAP LOCATION
+    </div>
+    <div class="col-20">
+      <i class="icon ion-android-close close_icon" ng-click="closecreatinghap()"></i>
+    </div>
+
+  </div>
+  <ion-content class="happen_cnt">
+      <ion-list>
+      <ion-item class="hapname_category border-top" type="item-text-wrap" ng-click="changeCategory()">
+        <div class="row">
+          <div class="col-10 col_haps">
+            <img ng-src='{{categoryiconpath}}' class="icons_img">
+          </div>
+          <div class="col-90 categoryclass col_haps">
+            <span>{{categoryname}}</span>
+          </div>
+          </div>
+     </ion-item>
+
+     <ion-item class="hapname_category" type="item-text-wrap" ng-click="changeHapname()">
+       <div class="row">
+         <div class="col-10 col_haps">
+            <i class="icon ion-ios-pricetag icon_size" ></i>
+         </div>
+         <div class="col-90 col_haps">
+           <span>{{hapname}}</span>
+         </div>
+
+         </div>
+    </ion-item>
+      <ion-item class="hapname_category" type="item-text-wrap" ng-click="changeDescription()">
+     <div class="row">
+       <div class="col-10 col_haps">
+           <i class="icon ion-ios-pricetag icon_size"></i>
+       </div>
+       <div class="col-90 col_haps">
+         <span>{{hapdescription}}</spans>
+       </div>
+
+       </div>
+  </ion-item>
+    </ion-list>
+      <h3 class="hap_header" ng-if="uphap == 1">Where will the Hap take place?</h3>
+      <h3 class="hap_header" ng-if="pasthap == 1">Where did the Hap take place?</h3>
+        <div class="padding_haplocation" style="padding-bottom:150px">
+<!--<ion-list ng-model="sloc">-->
+      <ion-radio   ng-click="CurrentLocation()" style="margin-top:10px" name="sloc" ng-model="sloc" ng-value="'current'">
+         <!--<img src="" class="icons_img">-->
+        <p >Current Location</p>
+
+
+      <div class="circle_img1"></div>
+ </ion-radio>
+
+   <ion-radio   ng-click="OtherLocation1()" name="sloc" ng-model="sloc" ng-value="'selected'">
+          <p >Other Location</p>
+      <div class="circle_img1"></div>
+ </ion-radio>
+<!--</ion-list>-->
+      <div class="input_padding padding" ng-if="otherlocation == 1">
+      <label class="item item-input item-input-wrapper">
+       <img src="img/location_icon_categories.png"/>
+         <input type="text" id="searchBar" placeholder="Enter Location"  class="form-control" ng-autocomplete ng-model="loc.haploc" style="width:100%" ng-focus="disableTap()" />
+      </label>
+      </div>
+
+    </div>
+
+  </ion-content>
+
+ <div class="bar bar-footer">
+        <div class="title">
+        <!-- <h5 class="next_text" ng-show="otherlocation == 3">NEXT <i class="icon ion-chevron-right icon_rignt"></i></h5> -->
+           <!-- <h5 class="next_text" ng-show="otherlocation == 1||otherlocation == 0" style="color:#1791f2" ng-click="moveTo()" >NEXT <i class="icon ion-chevron-right icon_rignt" style="color:#1791f2"></i></h5> -->
+           <h5 class="next_text" style="color:#1791f2" ng-click="moveTo()" >NEXT <i class="icon ion-chevron-right icon_rignt" style="color:#1791f2"></i></h5>
+        </div>
+      </div>
+
+</ion-view>
+</ion-slide>

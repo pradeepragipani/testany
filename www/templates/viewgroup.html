@@ -1,0 +1,36 @@
+<ion-slide>
+<ion-view view-title="Creategroup">
+  <div align="left" class="row bar bar_happening">
+    <div class="col-20" ng-click="goback()" ui-sref="app.mainnow">
+      <i class="icon ion-android-arrow-back back_arrow_icon" ></i>
+    </div>
+    <div align="center" class="col-20" style="padding: 5px;">
+       
+    </div>
+    <div align="right"  class="col-60" ui-sref="creategroup" style="padding: 5px;float:right">
+        CREATE GROUP
+    </div>
+
+  </div>
+  <div class="feedback_padding" style="padding:0px 0px 0px 0px !important">
+
+
+    <div align="center">
+      <ion-tabs class="tabs-icon-top tabs-top tabs-groups">
+          <ion-tab title="GROUPS" class="tabs-top-saved" ng-click="tabsViewGroups(1)">
+            <ion-nav-view name="view-Lists"></ion-nav-view>
+          </ion-tab>
+          <ion-tab title="NOTIFICATIONS" class="tabs-top-saved" ng-click="tabsViewGroups(2)">
+            <ion-nav-view name="view-Notifications"></ion-nav-view>
+          </ion-tab>
+
+        </ion-tabs>
+    </div>
+
+</div>
+
+
+<ion-content>
+  </ion-content>
+</ion-view>
+<ion-slide>

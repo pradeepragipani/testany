@@ -1,0 +1,82 @@
+<ion-view>
+  <div align="left" class="row bar bar_happening">
+    <div class="col-25">
+      <i class="icon ion-android-arrow-back back_arrow_icon" ui-sref="app.mainnow"></i>
+    </div>
+  <div class="col-75">
+    <div align="center" class="col-60" style="padding: 5px;">
+       ALL HAPS
+    </div>
+    </div>
+  </div>
+  <label class="item item-input" style="margin-top:40px" >
+			<input type="search" placeholder="Search" ng-model="search1" class="searchhaps">
+		</label>
+  <ion-content delegate-handle="mainScroll" style="margin-top:60px">
+
+<!--<ul class="dynamic-grid" angular-grid="pics" grid-width="150" gutter-size="2" angular-grid-id="gallery" refresh-on-img-load="false" >
+
+
+     <li data-ng-repeat="pic in pics" class="grid" >
+         <div class="card">
+         <img src="{{pic.imagepath}}" class="grid-img" data-actual-width = "{{pic.actualWidth}}"  data-actual-height="{{pic.actualHeight}}" style="padding:0px;	border-top-left-radius: 10px;border-top-right-radius: 10px;" />
+          <div style="padding:10px;">
+           <h4>{{pic.hapname}}</h4>
+           <h5><img src="img/location_icon.png" class="time_icon_myhaps"/>{{pic.location}}</h5>
+           <h5>  <img src="img/time_icon.png" class="time_icon_myhaps"/>{{pic.hapbegin}}</h5>
+           <h5>  <img src="img/time_icon.png" class="time_icon_myhaps"/>{{pic.hapend}}</h5>
+           <h5> <img ng-src="{{pic.caticonpath}}" class="category_icon"/>{{pic.catgory}}</h5>
+
+          </div>
+        </div>
+     </li>
+ </ul>-->
+
+<div class="row" ng-repeat="pic in pics | filter:search1" hidden="!hideList" ng-click="clickTest(pic.latitude,pic.logitude)">
+	<div class="card" style="width:100%">
+
+     <center><img ng-src="{{pic.imagepath}}"  /></center>
+  <div class="item item-text-wrap" >
+		<div class="row">
+			<div class="col-20">
+				<img ng-src='{{pic.caticonpath}}' class="icons_img_myhaps">
+				</div>
+				<div class="col-80">
+				<span class="catagory_myhaps">{{pic.catgory}}</span>
+			</div>
+			</div>
+			<br/>
+			<div align="left">
+      <h2 class="hap_name_myhaps">{{pic.hapname}}</h2>
+    </div>
+		<br/>
+    <div class="row" align="left">
+			<div class="col-20">
+      <img src="img/time_icon.png" class="time_icon_myhaps"/>
+			</div>
+			<div  class="col-80">
+			<span class="happening_clr_txt" >{{pic.hb}}</span>
+			</div>
+    </div>
+    <br/>
+     <div class="row" align="left">
+			<div class="col-20">
+      <img src="img/time_icon.png" class="time_icon_myhaps"/>
+			</div>
+			<div class="col-80">
+			<span class="happening_clr_txt">{{pic.he}}</span>
+			</div>
+    </div><br/>
+    <div class="row" align="left">
+			<div class="col-20">
+      <img src="img/location_icon.png" class="time_icon_myhaps"/>
+			</div>
+			<div class="col-80">
+			<span class="happening_clr_txt">{{pic.location}}</span>
+			</div>
+    </div>
+  </div>
+	</div>
+</div>
+  </ion-content>
+</ion-view>

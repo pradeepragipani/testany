@@ -1,0 +1,52 @@
+<ion-slide>
+<ion-view view-title="HapType">
+  <div align="left" class="row bar bar_happening">
+    <div class="col-33">
+      <i class="icon ion-android-arrow-back back_arrow_icon" ui-sref="category"></i>
+    </div>
+    <div align="center" class="col-33" style="padding: 5px;">
+      Hap Type
+    </div>
+    <div class="col-33">
+      <i class="icon ion-android-close close_icon" ui-sref="create"></i>
+    </div>
+  </div>
+
+  <ion-content class="happen_cnt">
+    <h3 class="hap_header">What kind of hap is it?</h3>
+
+  <div class="list" style="margin-bottom:80px">
+
+ <!--<ion-radio  ng-repeat="items in categories" ng-click="selectedCategory(items,$index)">
+      <img ng-hide="$index == row" ng-src="{{items.offimage}}" class="icons_img">
+       <img ng-show="$index == row" ng-src="{{items.onimage}}" class="icons_img">
+      <span ng-class="{text_color : $index == row}" class="text_truncate">{{items.categoryname}}</span>
+
+      <div class="circle_img"></div>
+ </ion-radio>-->
+ <h4 style="margin-left :20px">Hap Type</h4>
+                <div class="list">
+                  <ion-radio ng-click="getgrouptype(1,0)" name="htype" ng-model="htype" ng-value="'open'">
+                    <span style="color:#cccccc;" >  Open</span><div class="circle_img"></div>
+                  </ion-radio>
+                  <ion-radio ng-click="getgrouptype(2,1)" name="htype" ng-model="htype" ng-value="'opengroup'">
+                      <span style="color:#cccccc;">Open Group</span><div class="circle_img"></div>
+                  </ion-radio>
+
+                    <ion-radio ng-click="getgrouptype(3,2)" name="htype" ng-model="htype" ng-value="'privategroup'">
+                      <span style="color:#cccccc;">  Private Group</span><div class="circle_img"></div>
+                  </ion-radio>
+                </div>
+
+  </div>
+  </ion-content>
+     <div class="bar bar-footer">
+      <div class="title">
+        <!-- <h5 class="next_text" ng-hide="next == 1">NEXT <i class="icon ion-chevron-right icon_rignt"></i></h5> -->
+          <!-- <h5 class="next_text" ng-show="next == 1" ui-sref="hapname" style="color:#1791f2">NEXT <i class="icon ion-chevron-right icon_rignt" style="color:#1791f2"></i></h5> -->
+          <h5 class="next_text" ui-sref="hapname" style="color:#1791f2">NEXT <i class="icon ion-chevron-right icon_rignt" style="color:#1791f2"></i></h5>
+      </div>
+    </div>
+
+</ion-view>
+</ion-slide>

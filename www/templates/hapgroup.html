@@ -1,0 +1,31 @@
+<ion-view>
+     <div align="left" class="row bar bar_happening">
+    <div class="col-33">
+      <i class="icon ion-android-arrow-back back_arrow_icon" ui-sref="haptype"></i>
+    </div>
+    <div align="center" class="col-33" style="padding: 5px;">
+        Groups
+    </div>
+    <div class="col-33">
+      <i class="icon ion-android-close close_icon" ui-sref="create"></i>
+    </div>
+  </div>
+  <ion-content style="padding-top:60px;padding-bottom:60px">
+   
+<div ng-show="dev_len == 0" style="padding:10px"> You are not a member of any group. Please go back and chose "everyone can see", or create a group! </div>
+        
+      
+<h4 ng-hide="dev_len == 0" style="margin-left:20px">Please select Group </h4>
+ <ion-checkbox ng-hide="dev_len == 0" ng-repeat="item in devList" ng-model="item.selected" ng-change="update_addorg(item)" >
+         {{item.groupname}}
+        </ion-checkbox>
+
+ </ion-content>
+
+         <div class="bar bar-footer">
+      <div class="title">
+        <h5 class="next_text" ng-hide="next == 1">NEXT <i class="icon ion-chevron-right icon_rignt"></i></h5>
+          <h5 class="next_text" ng-show="next == 1" ui-sref="hapname" style="color:#1791f2">NEXT <i class="icon ion-chevron-right icon_rignt" style="color:#1791f2"></i></h5>
+      </div>
+    </div>
+</ion-view>

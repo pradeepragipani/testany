@@ -1,0 +1,103 @@
+<ion-slide>
+<ion-view view-title="Filter">
+  <div align="right" class="bar bar_filter">
+    <img src="img/back_arrow_small.png" ui-sref="app.mainnow" class="back_arrow"/>
+  <div class="col"></div>
+  <div class="col filter_save" ng-click="showPopup()">SAVE</div>
+    <div class="col filter_ok" ui-sref="app.mainnow">OK</div>
+  </div>
+  <ion-content class="category_padding">
+  <div class="search_padding">
+    <h4>CATEGORIES</h4>
+    <label class="item item-input search_input">
+        <img src="img/search_icon_grey.png"/>
+        <input type="text" placeholder="Search">
+      </label></div>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right category_top" type="item-text-wrap">
+        <img src="img/academy_learning_icon.png" class="icons_img">
+        <!-- <h2>Academy, Learning</h2> -->
+        <p>Academy, Learning</p>
+        <i class="icon ion-more"></i>
+
+        <!-- <ion-option-button class="button-assertive" ng-click="remove(chat)">
+          Delete
+        </ion-option-button> -->
+      </ion-item>
+	  <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap">
+        <img src="img/adult_icon.png" class="icons_img">
+        <p>Adult</p>
+        <i class="icon ion-more"></i>
+      </ion-item>
+	  <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap">
+        <img src="img/business_icon.png" class="icons_img">
+        <p>Business & Professional</p>
+        <i class="icon ion-more"></i>
+      </ion-item>
+	  <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap">
+      <img src="img/clubs_icon.png" class="icons_img">
+        <p>Clubs & Parties</p>
+        <i class="icon ion-more"></i>
+      </ion-item>
+	  <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap">
+        <img src="img/culture_icon.png" class="icons_img">
+        <p>Culture & Entertainment</p>
+        <i class="icon ion-more"></i>
+      </ion-item>
+	  <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap">
+        <img src="img/family_icon.png" class="icons_img">
+        <p>Family and Children</p>
+        <i class="icon ion-more"></i>
+      </ion-item>
+	  <ion-item class="item-remove-animate item-avatar item-icon-right"  type="item-text-wrap">
+        <img src="img/food_drink_icon.png" class="icons_img">
+        <p>Food & Drink</p>
+        <i class="icon ion-more" ui-sref="fooddrink"></i>
+	</ion-item>
+  <ion-item class="item-accordion" ng-show="isGroupShown()">
+				<span class="food_style"><b>Fast food Restaurants</b> -<span class="food_color"> Chinese; Italian; Japanese; Scandinavian</span></span>
+			</ion-item>
+	  <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap">
+        <img src="img/standup_comedy_icon.png" class="icons_img">
+        <p>Stand up Comedy</p>
+        <i class="icon ion-more"></i>
+      </ion-item>
+	  <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap">
+      <img src="img/physical_icon.png" class="icons_img">
+        <p>Physical Activities, Outdoor, Adventure</p>
+        <i class="icon ion-more"></i>
+      </ion-item>
+	  <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap">
+      <img src="img/politics_icon.png" class="icons_img">
+        <p>Politics, Demonstrations</p>
+        <i class="icon ion-more"></i>
+      </ion-item>
+	  <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap">
+      <img src="img/shopping_icon.png" class="icons_img">
+        <p>Shopping</p>
+        <i class="icon ion-more"></i>
+      </ion-item>
+	  <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap">
+        <img src="img/social_icon.png" class="icons_img">
+        <p>Social, Volunteering, Fundraising</p>
+        <i class="icon ion-more"></i>
+      </ion-item>
+	  <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap">
+        <img src="img/religious_icon.png" class="icons_img">
+        <p>Spirituality, Religion etc</p>
+        <i class="icon ion-more"></i>
+      </ion-item>
+	  <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap">
+      <img src="img/sports_icon.png" class="icons_img">
+        <p>Sports</p>
+        <i class="icon ion-more"></i>
+      </ion-item>
+	  <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap">
+        <img src="img/street_icon.png" class="icons_img">
+        <p>Street Performances and Free Stuff</p>
+        <i class="icon ion-more"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
+</ion-slide>

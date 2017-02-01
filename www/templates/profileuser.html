@@ -1,0 +1,59 @@
+<ion-slide>
+  <ion-view view-title="CREATE">
+<ion-content>
+  <!--<div align="left" class="row bar bar_visituser">
+  <div class="col-33">
+  <i class="icon ion-android-arrow-back back_arrow_icon_visituser" ui-sref="app.mainnow"></i>
+  </div>
+
+  <div align="center" class="col-33">
+  <img ng-src='{{displayProfile.profile_pic}}' class="userprofile_img"/><h4 class="user_text_visituser">{{displayProfile.fname}} {{displayProfile.lname}}</h4>
+  <button class="button button-full button-calm button_following_visituser" ng-if="follow == 'No'" ng-click="followUser()">FOLLOW</button>
+  <button class="button button-full button-calm button_following_visituser" ng-if="follow == 'yes'" ng-click="unfollowUser()">UNFOLLOW</button>
+  </div>
+
+
+  <div class="col-33">
+  &nbsp;
+  </div>
+
+  </div>-->
+  
+  
+  
+  <div align="left" class="bar_visituser">
+    <div class="row">
+      <div class="col-33">
+ <i class="icon ion-android-arrow-back back_arrow_icon_visituser" ui-sref="app.mainnow"></i>
+      </div>
+
+      <div align="center" class="col-33">
+       <img ng-src='{{displayProfile.profile_pic}}' class="userprofile_img"/>
+      </div>
+
+
+     
+  <div class="col-33">
+  &nbsp;
+  </div>
+</div>
+    
+ <div >
+    <center>  <h4 class="user_text_visituser">{{displayProfile.fname}} </h4></center>
+      <center> <button class="button  button-calm button_following_visituser" ng-if="follow == 'No'" ng-click="followUser()">FOLLOW</button></center>
+ <center> <button class="button  button-calm button_following_visituser" ng-if="follow == 'yes'" ng-click="unfollowUser()">UNFOLLOW</button></center>
+      </div>
+</div>
+  <ion-tabs class="tabs-icon-top tabs-top tabs-userprofile">
+    <ion-tab title="HAPS" class="tabs-top-viewers" ng-click="gettab(1)">
+         <ion-nav-view name="happercreated"></ion-nav-view>
+    </ion-tab>
+    <ion-tab title="INFO" class="tabs-top-saved" ng-click="gettab(2)">
+        <ion-nav-view name="happerdetails"></ion-nav-view>
+    </ion-tab>
+  </ion-tabs>
+
+  </ion-content>
+
+</ion-view>
+</ion-slide>

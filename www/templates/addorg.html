@@ -1,0 +1,21 @@
+<ion-view>
+  <ion-content>
+    <!--<img src="img/back_arrow_small.png" ui-sref="app.mainnow" class="back_arrow_login"/>-->
+  <div align="center" class="bg_login">
+    <img src="img/anyhap_logo.png" class="anyhap_logo_login"/>
+</div>
+
+<h5>Select or Skip to complete registartion</h5>
+ <ion-checkbox ng-repeat="item in devList" ng-model="item.selected" ng-change="update_addorg(item)" >
+          {{ item.orgname }}
+        </ion-checkbox>
+
+ </ion-content>
+
+         <div class="bar bar-footer">
+        <div class="title">
+
+          <h5 class="next_text"  style="color:#1791f2" ng-click="reg_finish()" >Finish </h5>
+        </div>
+      </div>
+</ion-view>

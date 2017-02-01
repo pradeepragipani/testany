@@ -1,0 +1,36 @@
+<ion-view>
+  <div align="left" class="row bar bar_happening">
+    <div class="col-25">
+      <i class="icon ion-android-arrow-back back_arrow_icon" ui-sref="app.mainnow"></i>
+    </div>
+  <div class="col-75">
+    <div align="center" style="padding: 5px;">
+      INVITE MEMBERS
+    </div>
+    </div>
+  </div>
+ <label class="item" style="margin-top:44px; z-index:999;background:none;padding:20px;">
+<input ng-model="searchText" placeholder="search contacts" style="width:100%;border:1px solid #cccccc;padding:10px;">
+			
+		</label>
+  <ion-content delegate-handle="mainScroll" style="margin-top:50px;padding:20px; height:auto !important;float:left;">
+  <div style="margin-bottom: 10px;margin-top:40px; height:auto !important;" >
+         
+          <div ng-show="phoneContacts">
+		  
+
+            <div  ng-repeat="contact in phoneContacts | filter:searchText" style="margin-top:10px;background:none;">
+             <div ng-repeat="email in contact.emails">
+           <ion-checkbox ng-model="isChecked" ng-if='email_valid(email.value)' ng-change="serach_mail(email.value,isChecked)">{{email.value}}</ion-checkbox>
+                </div>
+          
+            </div>
+          </div>
+        </div>
+            <center>   
+			<button class="button button-full button-calm popup_button" ng-click="invitegroup()">
+            Send
+             </button></center>
+{{phoneContacts}}
+  </ion-content>
+</ion-view>

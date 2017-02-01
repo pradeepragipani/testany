@@ -1,0 +1,35 @@
+<ion-slide>
+<ion-view>
+  <div align="left" class="row bar bar_happening">
+    <div class="col-20">
+      <i class="icon ion-android-arrow-back back_arrow_icon" ui-sref="upcominghapedit"></i>
+    </div>
+    <div align="center" class="col-60" style="padding: 5px;">
+        EDIT HAP NAME
+    </div>
+    <div align="center" class="col-20" style="padding: 5px;">
+        &nbsp;
+    </div>
+  </div>
+  <ion-content class="happen_cnt">
+
+      <h3 class="hap_header">Name the Hap!</h3>
+
+      <div class="list padding_hapname">
+        <label class="item item-input input_hapname">
+          <input type="text" ng-model="hapdetails.hapname" placeholder="hapdetails.hapname">
+        </label>
+
+      </div>
+
+      <div class="bar bar-footer">
+        <div class="title">
+          <h5 class="next_text" ng-show="hapdetails.hapname" style="color:#1791f2" ng-click="editname()" > OK </h5>
+        </div>
+      </div>
+  </ion-content>
+
+
+
+</ion-view>
+</ion-slide>
