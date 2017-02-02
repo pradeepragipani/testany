@@ -68,7 +68,7 @@
       <div class="input_padding padding" ng-if="otherlocation == 1">
       <label class="item item-input item-input-wrapper">
        <img src="img/location_icon_categories.png"/>
-         <input type="text" id="searchBar" placeholder="Enter Location"  class="form-control" ng-autocomplete ng-model="loc.haploc" style="width:100%" ng-focus="disableTap()" />
+         <input type="text" id="searchBar" placeholder="Enter Location"  class="form-control" ng-autocomplete ng-change="onChangeLoc()" ng-model="loc.haploc" style="width:100%" ng-focus="disableTap()" />
       </label>
       </div>
 

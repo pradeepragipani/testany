@@ -2079,7 +2079,7 @@ hr{
 
 
 .tabs-userprofile > .tabs, .tabs.tabs-userprofile{
-top:270px !important;
+top:250px !important;
 }
 
 
@@ -2299,6 +2299,7 @@ color: rgb(23, 145, 242) !important;
 }
 
 .info_bg{
+	height:50%;
 margin-top: 30px;
 padding: 20px;
 }

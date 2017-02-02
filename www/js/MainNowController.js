@@ -83,10 +83,10 @@ angular.module('starter.MainNowController', ['ngOpenFB'])
     // });
 
 
-
     $scope.$on('$ionicView.enter', function () {
       $rootScope.hap_id = "";
       $rootScope.mapclick=0;
+      $rootScope.myfirstpage=0;
           $rootScope.returnaddress = "";
           $rootScope.serlat = "";
           $rootScope.serlng = "";
@@ -145,8 +145,6 @@ $rootScope.newusername= LoginService.getUserid();
               }
             }
           );
-
-
         });
    // });
 
@@ -185,13 +183,8 @@ $rootScope.newusername= LoginService.getUserid();
 
     }
       $rootScope.callnowhaps()
-
       }
-
-
     });
-
-
 
     $scope.$on('search', function (event, args) {
       //   alert(args.message);
@@ -205,7 +198,6 @@ $rootScope.newusername= LoginService.getUserid();
           $rootScope.showAlert("Please enter Location");
           //console.log(results[0].geometry.location.latitude);
         }
-
         if (status == google.maps.GeocoderStatus.OK) {
           var latitude = results[0].geometry.location.lat();
           var longitude = results[0].geometry.location.lng();
@@ -219,13 +211,11 @@ $rootScope.newusername= LoginService.getUserid();
     $rootScope.callnowhaps = function () {
      $scope.currentLocation();
        google.maps.event.addListener($scope.map, 'click', function (event) {
-
         // alert("Latitude: " + event.latLng.lat() + "\r\nLongitude: " + event.latLng.lng());
         createad_lat = event.latLng.lat();
         createad_lng = event.latLng.lng();
       //  alert(createad_lat);
       //  alert(createad_lng);
-
       });
       google.maps.event.addListener($scope.map, 'bounds_changed', function () {
 

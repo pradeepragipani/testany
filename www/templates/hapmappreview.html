@@ -1,7 +1,7 @@
 <ion-slide>
 <ion-view>
-  <div align="left" class="row bar bar_hapmappreview" ng-click="previous_page()">
-    <div class="col-33">
+  <div align="left" class="row bar bar_hapmappreview">
+    <div class="col-33" ng-click="previous_page()">
       <i class="icon ion-android-arrow-back back_arrow_icon" ></i>
     </div>
     <div class="col-33">
@@ -9,7 +9,7 @@
       <h5 style="float:left;color:#000;" class="text_truncate">Created by {{hapdetails.fname}}</h5>
     </div>
 
-    <div class="col-33" >
+    <div class="col-33" ng-click="getHapperProfile(hapdetails.createdby)">
    <img ng-src='{{hapdetails.profile_pic}}' style="width:40px;height:40px;margin-right: 20px;float:right ;border-radius:50%;"/>
       </div>
 
@@ -22,11 +22,11 @@
             <img ng-src='{{hapdetails.caticonpath}}' class="icons_img">
           </div>
           <div class="col-60 categoryclass">
-            <p>{{displaycategory}}</p>
+            <p style="color:#000;">{{displaycategory}}</p>
           </div>
            <div class="col-20" align="right">
-      <p>{{hapdetails.hapviews}} Views</p>
-    </div>
+            <p style="color:#000; position:fixed; right:15px;">{{hapdetails.hapviews}} Views</p>
+          </div>
           </div>
      </ion-item>
     </ion-list>
@@ -34,7 +34,7 @@
       <div align="left" class="col">
       <h3 class="hap_name">{{hapdetails.hapname}}</h3>
     </div>
-     
+
     </div>
 
     <div class="row">

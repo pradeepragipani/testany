@@ -9,28 +9,30 @@ var userid = LoginService.getUserid();
  var tabid = 1;
  $scope.msgtemp = [];
 
-if(userid !== undefined)
-{
- ViewHapsService.getallcount(userid).success(function(data){
-    $ionicLoading.hide();
-      console.log(data);
-   //   alert(data["response"].length);
-   var sriteja= data["response"];
-  //  console.log(sriteja);
-     // $scope.viewhaps = data["response"];
- $scope.navTitle='<span class="two-line-title">'+sriteja["notificationcount"]+'</span><span class="two-line-title-2">NOTIFICATIONS</span>';
-    $scope.navTitle2='<span class="two-line-title">'+sriteja["hapscount"]+'</span><span class="two-line-title-2">MY HAPS</span>';
-    $scope.navTitle3='<span class="two-line-title">'+sriteja["following"]+'</span><span class="two-line-title-2">FOLLOWING</span>';
-    }).error(function(error){
+$scope.checkCount = function(){
+  if(userid !== undefined)
+  {
+   ViewHapsService.getallcount(userid).success(function(data){
       $ionicLoading.hide();
-      $rootScope.showAlert("Please check network");
-    });
-}
-else
-{
- $scope.navTitle='<span class="two-line-title"></span><span class="two-line-title-2">NOTIFICATIONS</span>';
-    $scope.navTitle2='<span class="two-line-title"></span><span class="two-line-title-2">MY HAPS</span>';
-    $scope.navTitle3='<span class="two-line-title"></span><span class="two-line-title-2">FOLLOWING</span>';
+        console.log(data);
+     //   alert(data["response"].length);
+     var sriteja= data["response"];
+    //  console.log(sriteja);
+       // $scope.viewhaps = data["response"];
+   $scope.navTitle='<span class="two-line-title">'+sriteja["notificationcount"]+'</span><span class="two-line-title-2">NOTIFICATIONS</span>';
+      $scope.navTitle2='<span class="two-line-title">'+sriteja["hapscount"]+'</span><span class="two-line-title-2">MY HAPS</span>';
+      $scope.navTitle3='<span class="two-line-title">'+sriteja["following"]+'</span><span class="two-line-title-2">FOLLOWING</span>';
+      }).error(function(error){
+        $ionicLoading.hide();
+        $rootScope.showAlert("Please check network");
+      });
+  }
+  else
+  {
+   $scope.navTitle='<span class="two-line-title"></span><span class="two-line-title-2">NOTIFICATIONS</span>';
+      $scope.navTitle2='<span class="two-line-title"></span><span class="two-line-title-2">MY HAPS</span>';
+      $scope.navTitle3='<span class="two-line-title"></span><span class="two-line-title-2">FOLLOWING</span>';
+  }
 }
 var sriteja;
  var obj={};
@@ -71,9 +73,11 @@ var sriteja;
  var offset = 0;
  $scope.$on('$ionicView.enter', function(){
    // $scope.listExperts1 = [];
+   $scope.obj = {};
    $scope.messages = "";
    $scope.msgtemp = [];
    userid = LoginService.getUserid();
+   $scope.checkCount();
    mysrclat = $rootScope.mysrclat;
    mysrclong = $rootScope.mysrclong;
    curdatetime = CurrentDateTime();
@@ -144,7 +148,6 @@ $scope.searchFollowing()
        //   alert(data);
          console.log(data);
          for(i=0;i<data["response"].length;i++){
-           $scope.obj = {};
            $scope.obj.profile_pic = data["response"][i]["profile_pic"];
            $scope.obj.message = data["response"][i]["message"];
            $scope.obj.time = displayTimeinNotifications(data["response"][i]["followingdate"]);
@@ -211,6 +214,7 @@ $scope.searchFollowing = function(){
    var sendfollowerid = {"userid":userid,"follwerid":followerid,"cdate":dt};
    FollowService.follow(sendfollowerid).success(function(data){
    //  alert(data["msg"]);
+      $scope.checkCount();
      $ionicLoading.hide();
      console.log(data);
      $rootScope.showAlert(""+data["message"]);
@@ -227,8 +231,8 @@ $scope.searchFollowing = function(){
      var sendfollowerid = {"userid":userid,"follwerid":followerid,"cdate":dt};
      FollowService.unfollow(sendfollowerid).success(function(data){
        //  alert(data["msg"]);
+       $scope.checkCount();
          $ionicLoading.hide();
-
          console.log(data);
          $rootScope.showAlert(""+data["message"]);
          $scope.listusers(sriteja);
