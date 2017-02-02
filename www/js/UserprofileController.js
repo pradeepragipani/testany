@@ -163,11 +163,10 @@ $scope.searchFollowing()
  $scope.fallowing_data={};
 // alert($scope.fallowing_data.search);
 
-
-
 $scope.searchFollowing = function(){
   var oldValue;
   oldValue = $scope.obj.searchFollowingTxt;
+  console.log(oldValue);
  //$scope.$watch('search2',function (oldValue, newValue) {
     if(oldValue == undefined)
     {
@@ -178,6 +177,9 @@ $scope.searchFollowing = function(){
        sriteja=oldValue;
        $scope.listusers(oldValue);
      }
+  }
+  if ($state.current.name=="userprofile.userfollowing") {
+    $scope.searchFollowing();
   }
  $scope.listusers = function(val){
    // Display Locations
