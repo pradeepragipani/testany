@@ -422,27 +422,26 @@ $scope.showProfile = function(){
     // if(userid == undefined){
     //    $scope.image = "img/userprofile_dummy.png";
     // }else{
-      if(userid)
-      {
-      LoginService.GetUserDetails(userid).success(function(data){
-        //  $ionicLoading.hide();
-        //   alert(data);
-          console.log(data);
-          $rootScope.firstname = data["response"]["userdetails"]["fname"];
-          $rootScope.emailid = data["response"]["userdetails"]["emailid"];
-          $scope.image = data["response"]["userdetails"]["profile_pic"];
-          $scope.haps = data["response"]["haps"];
-          $scope.followers = data["response"]["followers"];
-          $scope.following = data["response"]["following"];
-          $window.localStorage['userid'] = userid;
-          //  alert("firstname: "+$scope.firstname);
-        //  alert("image url: "+);
-        }).error(function(error){
-          $ionicLoading.hide();
-        //  alert("Please check network");
-        });
-  //  }
-      }
+      if(userid){
+        LoginService.GetUserDetails(userid).success(function(data){
+          //  $ionicLoading.hide();
+          //   alert(data);
+            console.log(data);
+            $rootScope.firstname = data["response"]["userdetails"]["fname"];
+            $rootScope.emailid = data["response"]["userdetails"]["emailid"];
+            $scope.image = data["response"]["userdetails"]["profile_pic"];
+            $scope.haps = data["response"]["haps"];
+            $scope.followers = data["response"]["followers"];
+            $scope.following = data["response"]["following"];
+            $window.localStorage['userid'] = userid;
+            //  alert("firstname: "+$scope.firstname);
+          //  alert("image url: "+);
+          }).error(function(error){
+            $ionicLoading.hide();
+          //  alert("Please check network");
+          });
+    //  }
+        }
   };
 
 $scope.anyhapuser=function()
@@ -487,6 +486,7 @@ $scope.loadUserMessages = function(){
       //   alert(data);
         console.log(data);
         $scope.updatescount = data["count"];
+        // console.log($scope.updatescount);
     }).error(function(error){
         $ionicLoading.hide();
       //  alert("Please check network");

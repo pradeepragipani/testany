@@ -27,6 +27,7 @@ $scope.changeDescription = function(){
 $rootScope.otherlocation=3;
 //$rootScope.sloc = "current";
 $scope.$on('$ionicView.enter', function(){
+
 $scope.loc = {};
 // alert($rootScope.mapclick);
 $rootScope.sloc = "";
@@ -37,10 +38,17 @@ if($scope.mapvalue == 1){
   $rootScope.otherlocation=1;
   $scope.loc.haploc = $rootScope.returnaddress;
   //$scope.OtherLocation1();
+}else if ($scope.mapvalue == 2) {
+    $rootScope.sloc = "selected";
+   $rootScope.otherlocation=1;
+   $rootScope.myfirstpage = 0;
+   $scope.loc.haploc = $rootScope.HapLocation;
 }else{
+  $rootScope.mapclick =0;
+  $scope.mapvalue = 0;
   $rootScope.sloc = "current";
   $rootScope.otherlocation=3;
-  $scope.loc.haploc = "";
+  // $scope.loc.haploc = "";
   $scope.CurrentLocation();
 }
 //alert("sloc value: "+$rootScope.sloc)
@@ -66,9 +74,21 @@ if($scope.mapvalue == 1){
   //  alert();
     $scope.loc.location = "";
 };
-
+  $scope.onChangeLoc = function(){
+    $rootScope.sloc = "selected";
+   $rootScope.otherlocation=1;
+   $rootScope.myfirstpage = 0;
+   $rootScope.mapclick = 2;
+  }
 $scope.CurrentLocation=function()
 {
+  $rootScope.mapclick =0;
+  // $scope.mapvalue = 0;
+  // $rootScope.returnaddress = "";
+  // // $scope.loc.haploc = "";
+  // $rootScope.HapLocation="";
+  // $rootScope.sendlat="";
+  // $rootScope.sendlog="";
   $rootScope.sloc = "current";
   $rootScope.sendlat= $rootScope.curr_lat;
   $rootScope.sendlog= $rootScope.curr_lng;
@@ -84,6 +104,7 @@ $scope.CurrentLocation=function()
 // }
 $scope.OtherLocation1=function()
 {
+  $rootScope.mapclick =2;
   $rootScope.sendlat=$rootScope.serlat;
   $rootScope.sendlog=$rootScope.serlng;
   $rootScope.sloc = "selected";
@@ -132,15 +153,15 @@ $scope.name.hapname="";
         if (status == google.maps.GeocoderStatus.OK) {
           if($rootScope.myfirstpage!=1)
           {
-            // alert("if");
-         $rootScope.sendlat = results[0].geometry.location.lat();
-         $rootScope.sendlog = results[0].geometry.location.lng();
-         // var center = new google.maps.LatLng(latitude, longitude);
-          // using global variable:
-        //  $scope.map.panTo(center);
-          //alert(latitude);
-          console.log("latlong: "+$rootScope.sendlat+","+$rootScope.sendlog);
-        }
+              // alert("if");
+           $rootScope.sendlat = results[0].geometry.location.lat();
+           $rootScope.sendlog = results[0].geometry.location.lng();
+           // var center = new google.maps.LatLng(latitude, longitude);
+            // using global variable:
+          //  $scope.map.panTo(center);
+            //alert(latitude);
+            console.log("latlong: "+$rootScope.sendlat+","+$rootScope.sendlog);
+          }
         }
       });
 

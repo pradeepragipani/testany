@@ -5,7 +5,7 @@
 		<img src="{{image}}" ui-sref="editprofile" class="imageInProfile">
 
 	</div>
-	<ion-item style="top: 40px;padding: 10px 10px 10px 10px;background: none;position: absolute;width: 100%;">
+	<!-- <ion-item style="top: 40px;padding: 10px 10px 10px 10px;background: none;position: absolute;width: 100%;">
 		<div class="row">
 			<div class="col-75" style="padding:12px 0 0 0;">
 				<input type="search" placeholder="Search" ng-model="obj.search1" class="searchhaps" style="position: absolute;background-color: #fff;
@@ -16,74 +16,63 @@
 				 style="left: 15px; width:100%; min-height:30px!important;line-height:20px; margin-top:10px;">OK</button>
 			</div>
 		</div>
-		<!-- <div align="left">
-		<h2 style="margin-top: 135px;">Some Name</h2>
-	</div> -->
-	</ion-item>
+	</ion-item> -->
 <ion-content class="myhaps_bg" style="height: 100%; top:222px; background-color: #E4E4E4 !important;">
-
 	<br/>
 	<div  style="margin-bottom: 100px;">
-
-	<div class="row" ng-repeat="items in viewhaps | filter:searchHapsTxt">
-
-		<div class="col">
-	<div class="card" style="margin-top: 40px !important;">
-  <div class="item item-text-wrap" ng-click="clickedonHap({{items.id}})" on-swipe-left="onSwipeLeft()">
-		<div class="row">
-			<div class="col-20">
-				<img ng-src='{{items.caticonpath}}' class="icons_img_myhaps">
+		<div class="row" ng-repeat="items in viewhaps | filter:searchHapsTxt">
+			<div class="col">
+				<div class="card" style="margin-top: 40px !important;">
+				  <div class="item item-text-wrap" ng-click="clickedonHap({{items.id}})" on-swipe-left="onSwipeLeft()">
+						<div class="row">
+							<div class="col-20">
+								<img ng-src='{{items.caticonpath}}' class="icons_img_myhaps">
+								</div>
+								<div class="col-80">
+								<span class="catagory_myhaps">{{items.catgory}}</span>
+							</div>
+						</div>
+						<br/>
+						<div align="left">
+				      <h2 class="hap_name_myhaps">{{items.hapname}}</h2>
+				    </div>
+						<br/>
+				    <div class="row" align="left">
+							<div class="col-20">
+				      	<img src="img/time_icon.png" class="time_icon_myhaps"/>
+							</div>
+							<div class="col-80">
+								<span class="happening_clr_txt">{{items.showstatus}}</span>
+							</div>
+				    </div>
+				    <br/>
+				    <div class="row" align="left">
+							<div class="col-20">
+				      	<img src="img/location_icon.png" class="time_icon_myhaps"/>
+							</div>
+							<div class="col-80">
+								<span class="happening_clr_txt">{{items.location}}</span>
+							</div>
+				    </div>
+				    <br/>
+						<hr/>
+			      <div align="center" class="row">
+			        <div class="col-33">
+			          <img src="img/smileynew_1.png" class="smileynew_img"/><br/>
+			          <span class="num_clr">{{items.count[0]}}</span>
+			        </div>
+			        <div class="col-33">
+			          <img src="img/smileynew_2.png" class="smileynew_img"/><br/>
+			          <span class="num_clr">{{items.count[1]}}</span>
+			        </div>
+			        <div class="col-33">
+			          <img src="img/smileynew_3.png" class="smileynew_img"/><br/>
+			          <span class="num_clr">{{items.count[2]}}</span>
+			        </div>
+			      </div>
+				  </div>
 				</div>
-				<div class="col-80">
-				<span class="catagory_myhaps">{{items.catgory}}</span>
 			</div>
-			</div>
-
-			<br/>
-
-			<div align="left">
-      <h2 class="hap_name_myhaps">{{items.hapname}}</h2>
-    </div>
-		<br/>
-    <div class="row" align="left">
-			<div class="col-20">
-      <img src="img/time_icon.png" class="time_icon_myhaps"/>
-			</div>
-			<div class="col-80">
-			<span class="happening_clr_txt">{{items.showstatus}}</span>
-			</div>
-    </div>
-
-    <br/>
-    <div class="row" align="left">
-			<div class="col-20">
-      <img src="img/location_icon.png" class="time_icon_myhaps"/>
-			</div>
-			<div class="col-80">
-			<span class="happening_clr_txt">{{items.location}}</span>
-			</div>
-    </div>
-    <br/>
-		<hr/>
-      <div align="center" class="row">
-        <div class="col-33">
-          <img src="img/smileynew_1.png" class="smileynew_img"/><br/>
-          <span class="num_clr">{{items.count[0]}}</span>
-        </div>
-
-        <div class="col-33">
-          <img src="img/smileynew_2.png" class="smileynew_img"/><br/>
-          <span class="num_clr">{{items.count[1]}}</span>
-        </div>
-
-        <div class="col-33">
-          <img src="img/smileynew_3.png" class="smileynew_img"/><br/>
-          <span class="num_clr">{{items.count[2]}}</span>
-        </div>
-      </div>
-  </div>
-	</div>
-</div>
 
 <!--
 <div class="col" >
@@ -144,10 +133,10 @@
 </div>
 </div> -->
 
-</div>
-</div>
+		</div>
+	</div>
 <div style="margin-bottom:150px;">
-&nbsp;
+	&nbsp;
 </div>
-  </ion-content>
+</ion-content>
 </ion-view>

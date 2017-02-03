@@ -3,16 +3,15 @@ angular.module('starter.listController', [])
 .controller('listCtrl', function($scope,$rootScope,ViewHapsService,
   $ionicLoading,$ionicPopup,$location,$state,$ionicScrollDelegate) {
 
-
  var sendcurlatlong = {};
  var imageList;
   //sendcurlatlong.lat = nelat;
 //  sendcurlatlong.lon = nelon;
 
-
   $scope.$on('$ionicView.enter', function () {
     $scope.pics = "";
     $scope.hideList = false;
+    $scope.pics="";
     $scope.temp = [];
     sendcurlatlong = {};
       $scope.catids1 =$rootScope.CategoryIdsformap;
@@ -36,7 +35,7 @@ angular.module('starter.listController', [])
         $scope.center_lon = $rootScope.centerlon;
         $scope.distance = $rootScope.calculate_distance;
         if($rootScope.list_past == "inactive" && $rootScope.list_now == "inactive" && $rootScope.list_upcoming == "inactive"){
-          $rootScope.showAlert("Past, Now and Upcoming Buttons are Inactive. Please Select atleast on of it.");
+          $rootScope.showAlert("Past, Now and Upcoming Buttons are Inactive. Please Select atleast one of it.");
         }else{
           $scope.list();
         }
@@ -73,7 +72,6 @@ $scope.pics="Loaing Please wait........"
         //  $scope.pics = data["response"];
         // console.log(JSON.stringify(data.response))
         //      $scope.pics = data.response;
-
 
              for(i=0;i<data["response"].length;i++){
                $scope.obj = {};

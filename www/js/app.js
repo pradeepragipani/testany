@@ -37,7 +37,7 @@ angular.module('starter', ['ionic','ngAutocomplete','ngTagsInput','angularGrid',
     }]
   })
    };
-  
+
   $ionicPlatform.ready(function() {
     ngFB.init({appId: '228179270848011'});
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -59,7 +59,7 @@ angular.module('starter', ['ionic','ngAutocomplete','ngTagsInput','angularGrid',
     // An alert dialog
     // $scope.showNoInternetAlert = function() {
       var alertPopup = $ionicPopup.alert({
-        title: 'Warning !',
+        title: 'anyhap',
         template: 'Please Check your Internet Connection..!!'
       });
 
@@ -104,7 +104,7 @@ angular.module('starter', ['ionic','ngAutocomplete','ngTagsInput','angularGrid',
 
 //  var admobid = {};
 //         // select the right Ad Id according to platform
-//         if( /(android)/i.test(navigator.userAgent) ) { 
+//         if( /(android)/i.test(navigator.userAgent) ) {
 //             admobid = { // for Android
 //                 banner: 'ca-app-pub-6284136639716335/3164790808',
 //                 interstitial: 'ca-app-pub-6869992474017983/1657046752'
@@ -120,10 +120,10 @@ angular.module('starter', ['ionic','ngAutocomplete','ngTagsInput','angularGrid',
 //                 interstitial: 'ca-app-pub-6869992474017983/1355127956'
 //             };
 //         }
- 
+
 //   if(window.AdMob) AdMob.createBanner( {
-//       adId:admobid.banner, 
-//       position:AdMob.AD_POSITION.BOTTOM_CENTER, 
+//       adId:admobid.banner,
+//       position:AdMob.AD_POSITION.BOTTOM_CENTER,
 //       autoShow:true} );
 
 //        AdMob.prepareInterstitial( {adId:admobid.interstitial,isTesting:true, autoShow:false} );
@@ -133,7 +133,7 @@ angular.module('starter', ['ionic','ngAutocomplete','ngTagsInput','angularGrid',
    if (true) { // your check here
      if($state.current.name=="app.mainnow") {
        $ionicPopup.confirm({
-         title: 'Warning!',
+         title: 'anyhap',
          template: 'Are you sure you want to exit?'
        }).then(function(res) {
          if (res) {
@@ -240,6 +240,12 @@ angular.module('starter', ['ionic','ngAutocomplete','ngTagsInput','angularGrid',
          templateUrl: 'templates/editprofile.html',
          controller:'editprofileCtrl'
    })
+
+   .state('aboutUs', {
+        url: '/aboutUs',
+        templateUrl: 'templates/aboutUs.html',
+        controller:'aboutUsCtrl'
+  })
 
 .state('profileuser', {
          url: '/profileuser',

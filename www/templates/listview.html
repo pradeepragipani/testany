@@ -32,7 +32,7 @@
      </li>
  </ul>-->
 
-<div class="row" ng-repeat="pic in pics | filter:search1" hidden="!hideList" ng-click="clickTest(pic.latitude,pic.logitude)">
+<div class="row" ng-repeat="pic in pics | filter:search1" ng-click="clickTest(pic.latitude,pic.logitude)">
 	<div class="card" style="width:100%">
 
      <center><img ng-src="{{pic.imagepath}}"  /></center>

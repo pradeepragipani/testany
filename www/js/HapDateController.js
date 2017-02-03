@@ -284,7 +284,7 @@ else if(splitdate[0] == fullyear){
 
 })
 function formatDate(date) {
-  console.log("serverdate"+date);
+  // console.log("serverdate"+date);
     var d = new Date(date);
     var hh = d.getHours();
   // alert("first: "+d);
@@ -305,7 +305,7 @@ function formatDate(date) {
     s = s<10?"0"+s:s;
 
    var returntime = h+":"+m+" "+dd;
-   console.log("returntime"+returntime);
+  //  console.log("returntime"+returntime);
   // alert(returntime);
    return returntime;
 }

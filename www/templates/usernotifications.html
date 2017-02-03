@@ -21,7 +21,6 @@
 		<div style="clear:both;"></div>
 <ion-content class="notifications_bg" style="height: 100%; top:222px; background-color: #E4E4E4 !important;">
 
-
 	<!--<div class="row padding_user" ng-repeat="items in messages">
 
 		<div align="left" class="col-50 padding_usernotifications">
@@ -33,36 +32,25 @@
 		</div>
 	</div>-->
 
-
 	<ion-list >
 		<div style="margin-top: 40px !important;">
       <ion-item class="item-remove-animate item-avatar item-icon-right"  ng-repeat="items in messages" type="item-text-wrap">
-        <img ng-src="{{items.profile_pic}}">
+        <img style="top:8px;" ng-src="{{items.profile_pic}}">
         <h3>{{items.message}}</h3>
         <p style="color:#000"> {{items.time}}</p>
-
-
-
       </ion-item>
 		</div>
     </ion-list>
 
-
 <!--
 <div class="row padding_user">
-
 
 	<div align="left" class="col-50 padding_usernotifications">
 		<span class="user_followingtxt text_truncate">Fejoada with Samba starts in 1hr! </span>
 	</div>
-
 	<div class="col-50 padding_usernotifications">
 		<span class="hours_txt">1d</span>
 	</div>
 </div> -->
-
-
-
-
   </ion-content>
 </ion-view>
