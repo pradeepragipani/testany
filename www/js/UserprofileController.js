@@ -81,7 +81,7 @@ var sriteja;
    $scope.displayHapperDetails();
    //to clear filters-search in userMyHaps
    $rootScope.searchHapsTxt = "";
-   $scope.listExperts = "";
+   $rootScope.listExperts = "";
 
    if ($state.current.name=="userprofile.userfollowing") {
      $rootScope.hideInNotification = true;
@@ -190,7 +190,7 @@ $scope.searchFollowing = function(oldValue){
      $ionicLoading.hide();
 
      console.log(data);
-     $scope.listExperts = data["response"];
+     $rootScope.listExperts = data["response"];
    }).error(function(error){
      $ionicLoading.hide();
      $rootScope.showAlert("Please check network");
