@@ -4,15 +4,25 @@
       <div class="col-33">
         <i class="icon ion-android-arrow-back back_arrow_icon" ui-sref="app.mainnow"></i>
       </div>
-
-
       <!--<div class="col-66" ui-sref="editprofile">
-
-     <img ng-src='{{image}}' style="width: 35px;height: 35px;margin-right: 20px;float:right ;border-radius:50%;"/>
-       <h5 style="float:right;color:#fff; margin-right:20px;" class="text_truncate">{{displayProfile.fname}}</h5>
+            <img ng-src='{{image}}' style="width: 35px;height: 35px;margin-right: 20px;float:right ;border-radius:50%;"/>
+            <h5 style="float:right;color:#fff; margin-right:20px;" class="text_truncate">{{displayProfile.fname}}</h5>
         </div>-->
+        <ion-item ng-hide="!hideInNotification" style="bottom: -1px;padding: 10px 10px 10px 10px;background: none;position: absolute;width: 87%; right:2px;">
+      		<div class="row">
+      			<div class="col-75" style="padding:12px 0 0 0;">
+      				<input type="search" placeholder="Search" ng-model="obj.search1" class="searchhaps" style="position: absolute;background-color: #fff;
+      	    z-index: 999; width: 70%; border-radius: 8px;border: 1px solid #cccccc;">
+      			</div>
+      			<div class="col-20" style="padding:3px 0 0 10px;" ng-click="searchInUserProfile(obj.search1)">
+      				<button class="button button-block button-positive button_ok"
+      				 style="left: 15px; width:100%; min-height:30px!important;line-height:20px;
+               margin-top:10px; color:#fff; background-color: #1791f2 !important;">
+               OK</button>
+      			</div>
+      		</div>
+      	</ion-item>
     </div>
-
 
   <div align="center">
     <ion-tabs class="tabs-icon-top tabs-top tabs-userprofile">

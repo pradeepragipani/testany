@@ -60,7 +60,6 @@ angular.module('starter.ViewHapsService', [])
     return $http.post('http://40.114.255.43/demo/stripe/paymentcomplete',stripepayment);
   },
   verifyCoupon: function(couponcode){
-  
     console.log(couponcode);
     return $http.post('http://40.114.255.43/demo/coupon/checkcoupon',couponcode);
   },

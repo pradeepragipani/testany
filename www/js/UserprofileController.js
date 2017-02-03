@@ -2,12 +2,9 @@ angular.module('starter.UserprofileController', [])
 
 .controller('UserprofileController', function($scope,$rootScope,LoginService,FollowService,ViewHapsService,
   $ionicLoading,$ionicPopup,$location,$state) {
-
-
-
-var userid = LoginService.getUserid();
- var tabid = 1;
- $scope.msgtemp = [];
+    var userid = LoginService.getUserid();
+    var tabid = 1;
+    $scope.msgtemp = [];
 
 $scope.checkCount = function(){
   if(userid !== undefined)
@@ -43,16 +40,15 @@ var sriteja;
       //  $rootScope.showAlert("Please Login");
       $location.path("/login");
      }else{
-     $state.go("userprofile.usernotifications");
-
-      }
+       $state.go("userprofile.usernotifications");
+     }
    }else if (tabid == 2) {
      if(userid == undefined){
       //  $rootScope.showAlert("Please Login");
       $location.path("/login");
      }else{
-     $state.go("userprofile.usermyhaps");
-      }
+       $state.go("userprofile.usermyhaps");
+     }
    }else{
      if(userid == undefined){
       //  $rootScope.showAlert("Please Login");
@@ -62,19 +58,18 @@ var sriteja;
         sriteja="";
     obj={};
      }
-
    }
  };
-
 
  // alert("userid list locationctrol: "+userid);
  var sendlatlongwithhapid = {};
  var mysrclat,mysrclong,curdatetime,happerid;
  var offset = 0;
+ $rootScope.hideInNotification = false;
  $scope.$on('$ionicView.enter', function(){
    // $scope.listExperts1 = [];
    $scope.obj = {};
-   $scope.messages = "";
+   $rootScope.messages = "";
    $scope.msgtemp = [];
    userid = LoginService.getUserid();
    $scope.checkCount();
@@ -84,13 +79,20 @@ var sriteja;
 
   // happerid = LoginService.getHapperId();
    $scope.displayHapperDetails();
-   $scope.details();
-   $scope.loadUserMessages();
-$scope.searchFollowing()
    //to clear filters-search in userMyHaps
-   $scope.searchHapsTxt = "";
+   $rootScope.searchHapsTxt = "";
    $scope.listExperts = "";
 
+   if ($state.current.name=="userprofile.userfollowing") {
+     $rootScope.hideInNotification = true;
+     $scope.searchFollowing();
+   }else if ($state.current.name=="userprofile.usermyhaps") {
+     $rootScope.hideInNotification = true;
+     $scope.details();
+   }else {
+     $rootScope.hideInNotification = false;
+     $scope.loadUserMessages();
+   }
    if(userid != undefined){
     // $scope.listusers();
    }
@@ -153,8 +155,8 @@ $scope.searchFollowing()
            $scope.obj.time = displayTimeinNotifications(data["response"][i]["followingdate"]);
            $scope.msgtemp.push($scope.obj);
          }
-       $scope.messages = $scope.msgtemp;
-
+       $rootScope.messages = data["response"];
+       console.log($rootScope.messages);
      }).error(function(error){
          $ionicLoading.hide();
        //  alert("Please check network");
@@ -163,9 +165,9 @@ $scope.searchFollowing()
  $scope.fallowing_data={};
 // alert($scope.fallowing_data.search);
 
-$scope.searchFollowing = function(){
-  var oldValue;
-  oldValue = $scope.obj.searchFollowingTxt;
+$scope.searchFollowing = function(oldValue){
+  // var oldValue;
+  // oldValue = $scope.obj.search1;
   console.log(oldValue);
  //$scope.$watch('search2',function (oldValue, newValue) {
     if(oldValue == undefined)
@@ -178,9 +180,7 @@ $scope.searchFollowing = function(){
        $scope.listusers(oldValue);
      }
   }
-  if ($state.current.name=="userprofile.userfollowing") {
-    $scope.searchFollowing();
-  }
+
  $scope.listusers = function(val){
    // Display Locations
    var data={"userid":userid,"string":val}
@@ -198,11 +198,21 @@ $scope.searchFollowing = function(){
  // End of displaying Locations
  };
 
+ $rootScope.searchInUserProfile = function(value){
+   if ($state.current.name == 'userprofile.usermyhaps') {
+     $scope.searchMyHaps(value);
+   }else if ($state.current.name == 'userprofile.userfollowing') {
+     $scope.searchFollowing(value);
+   }else {
+
+   }
+ }
+
  $scope.searchMyHaps = function(sitem) {
    if (sitem == "" || sitem == undefined) {
-     $scope.showAlert("Please enter text");
+     $scope.showAlert("Please enter Search text");
    }else {
-     $scope.searchHapsTxt = sitem;
+     $rootScope.searchHapsTxt = sitem;
    }
  }
 
