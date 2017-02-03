@@ -30,7 +30,7 @@ $scope.$on('$ionicView.enter', function(){
 
 $scope.loc = {};
 // alert($rootScope.mapclick);
-$rootScope.sloc = "";
+// $rootScope.sloc = "";
 $scope.mapvalue = $rootScope.mapclick;
 
 if($scope.mapvalue == 1){
