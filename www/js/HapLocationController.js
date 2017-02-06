@@ -153,7 +153,7 @@ $scope.name.hapname="";
         if (status == google.maps.GeocoderStatus.OK) {
           if($rootScope.myfirstpage==2)
           {
-              alert("if");
+              // alert("if");
            $rootScope.sendlat = results[0].geometry.location.lat();
            $rootScope.sendlog = results[0].geometry.location.lng();
            // var center = new google.maps.LatLng(latitude, longitude);
