@@ -90,8 +90,8 @@ $scope.CurrentLocation=function()
   // $rootScope.sendlat="";
   // $rootScope.sendlog="";
   $rootScope.sloc = "current";
-  $rootScope.sendlat= $rootScope.mysrclat;
-  $rootScope.sendlog= $rootScope.mysrclong;
+  $rootScope.sendlat= $rootScope.curr_lat;
+  $rootScope.sendlog= $rootScope.curr_lng;
   $rootScope.otherlocation=0;
   // alert($rootScope.address);
     $scope.loc.haploc = $rootScope.address;
@@ -151,9 +151,9 @@ $scope.name.hapname="";
         console.log(results[0]);
         console.log(results[0].geometry.location.latitude);
         if (status == google.maps.GeocoderStatus.OK) {
-          if($rootScope.myfirstpage!=1)
+          if($rootScope.myfirstpage==2)
           {
-              // alert("if");
+              alert("if");
            $rootScope.sendlat = results[0].geometry.location.lat();
            $rootScope.sendlog = results[0].geometry.location.lng();
            // var center = new google.maps.LatLng(latitude, longitude);
