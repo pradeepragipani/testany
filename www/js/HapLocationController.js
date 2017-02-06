@@ -30,7 +30,7 @@ $scope.$on('$ionicView.enter', function(){
 
 $scope.loc = {};
 // alert($rootScope.mapclick);
-// $rootScope.sloc = "";
+$rootScope.sloc = "";
 $scope.mapvalue = $rootScope.mapclick;
 
 if($scope.mapvalue == 1){
@@ -90,8 +90,8 @@ $scope.CurrentLocation=function()
   // $rootScope.sendlat="";
   // $rootScope.sendlog="";
   $rootScope.sloc = "current";
-  $rootScope.sendlat= $rootScope.curr_lat;
-  $rootScope.sendlog= $rootScope.curr_lng;
+  $rootScope.sendlat= $rootScope.mysrclat;
+  $rootScope.sendlog= $rootScope.mysrclong;
   $rootScope.otherlocation=0;
   // alert($rootScope.address);
     $scope.loc.haploc = $rootScope.address;
@@ -166,8 +166,8 @@ $scope.name.hapname="";
       });
 
     if($scope.nowhap == 1){
-      // var forShowingLoc = "<b>Hap at : </b> <br>" + $scope.loc.haploc + "<br><b>Latitude: </b>" + $rootScope.sendlat + "<br><b>Longitude:</b> " + $rootScope.sendlog;
-      //  $rootScope.showAlert(forShowingLoc);
+      var forShowingLoc = "<b>Hap at : </b> <br>" + $scope.loc.haploc + "<br><b>Latitude: </b>" + $rootScope.sendlat + "<br><b>Longitude:</b> " + $rootScope.sendlog;
+       $rootScope.showAlert(forShowingLoc);
       $location.path('/hapvisible');
     }else{
       $location.path('/hapdate');
