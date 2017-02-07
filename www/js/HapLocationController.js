@@ -90,8 +90,8 @@ $scope.CurrentLocation=function()
   // $rootScope.sendlat="";
   // $rootScope.sendlog="";
   $rootScope.sloc = "current";
-  $rootScope.sendlat= $rootScope.curr_lat;
-  $rootScope.sendlog= $rootScope.curr_lng;
+  $rootScope.sendlat= $rootScope.mysrclat;
+  $rootScope.sendlog= $rootScope.mysrclong;
   $rootScope.otherlocation=0;
   // alert($rootScope.address);
     $scope.loc.haploc = $rootScope.address;
