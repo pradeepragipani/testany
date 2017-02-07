@@ -151,8 +151,7 @@ $scope.name.hapname="";
         console.log(results[0]);
         console.log(results[0].geometry.location.latitude);
         if (status == google.maps.GeocoderStatus.OK) {
-          if($rootScope.myfirstpage==2)
-          {
+          if($rootScope.myfirstpage != 1 && $rootScope.mapclick != 0) {
               // alert("if");
            $rootScope.sendlat = results[0].geometry.location.lat();
            $rootScope.sendlog = results[0].geometry.location.lng();
@@ -166,8 +165,8 @@ $scope.name.hapname="";
       });
 
     if($scope.nowhap == 1){
-      var forShowingLoc = "<b>Hap at : </b> <br>" + $scope.loc.haploc + "<br><b>Latitude: </b>" + $rootScope.sendlat + "<br><b>Longitude:</b> " + $rootScope.sendlog;
-       $rootScope.showAlert(forShowingLoc);
+      // var forShowingLoc = "<b>Hap at : </b> <br>" + $scope.loc.haploc + "<br><b>Latitude: </b>" + $rootScope.sendlat + "<br><b>Longitude:</b> " + $rootScope.sendlog;
+      //  $rootScope.showAlert(forShowingLoc);
       $location.path('/hapvisible');
     }else{
       $location.path('/hapdate');

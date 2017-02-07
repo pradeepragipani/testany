@@ -106,6 +106,7 @@ $rootScope.newusername= LoginService.getUserid();
           latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
           $rootScope.curr_lat=position.coords.latitude;
            $rootScope.curr_lng=position.coords.longitude;
+
              $scope.map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
            $scope.map.setCenter(latlng)
 
@@ -123,6 +124,7 @@ $rootScope.newusername= LoginService.getUserid();
                 if (results[0]) {
                   var add = results[0].formatted_address;
                    $rootScope.address = results[0].formatted_address;
+                   $rootScope.showAlert("<b>Current Location - </b>"+$rootScope.address+"<br><br><b>Latitude: </b>"+$rootScope.curr_lat + "<br><b>Longitude: </b>"+$rootScope.curr_lng);
                   var value = add.split(",");
 
                   var count = value.length;

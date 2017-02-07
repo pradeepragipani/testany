@@ -25,6 +25,9 @@ $scope.$on('$ionicView.enter', function(){
  $scope.hapname = $rootScope.HapName;
  $scope.haploc = $rootScope.HapLocation;
   $scope.hapdescription = $rootScope.HapDescription;
+
+  var forShowingLoc = "<b>Hap at : </b> <br>" + $rootScope.HapLocation + "<br><b>Latitude: </b>" + $rootScope.sendlat + "<br><b>Longitude:</b> " + $rootScope.sendlog;
+   $rootScope.showAlert(forShowingLoc);
 });
 
 // $scope.showAlert = function(temp) {
