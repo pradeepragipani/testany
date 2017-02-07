@@ -1657,6 +1657,10 @@ console.log(nowall1);
                 $rootScope.otherlocation=1;
 
                 var latlng = new google.maps.LatLng(createad_lat, createad_lng);
+                $rootScope.sendlat="";
+                $rootScope.sendlog="";
+                $rootScope.serlat = "";
+                $rootScope.serlng = "";
                   $rootScope.sendlat=createad_lat;
                   $rootScope.sendlog=createad_lng;
                   $rootScope.serlat = createad_lat;
@@ -1669,10 +1673,10 @@ console.log(nowall1);
 
                     if (results[1]) {
                       //formatted address
+                      $rootScope.mapclick = 1;
                       $rootScope.returnaddress = results[0].formatted_address;
-                      // var forShowingLoc = "<b>Selected Location is : </b> <br>" + $rootScope.returnaddress + "<br><b>Latitude: </b>" + createad_lat + "<br><b>Longitude:</b> " + createad_lng;
-                      // $rootScope.showAlert(forShowingLoc);
-                        $rootScope.mapclick = 1;
+                      var forShowingLoc = "<b>Selected Location is : </b> <br>" + $rootScope.returnaddress + "<br><b>Latitude: </b>" + createad_lat + "<br><b>Longitude:</b> " + createad_lng;
+                      $rootScope.showAlert(forShowingLoc);
 
                       $state.go("create");
                     } else {
