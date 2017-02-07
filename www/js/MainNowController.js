@@ -104,7 +104,7 @@ $rootScope.newusername= LoginService.getUserid();
           $ionicLoading.show({template: '<ion-spinner icon="ios"></ion-spinner>'});
    // $ionicPlatform.ready(function() {
         navigator.geolocation.getCurrentPosition(function (position) {
-
+          latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
           $rootScope.curr_lat=position.coords.latitude;
            $rootScope.curr_lng=position.coords.longitude;
 
@@ -113,7 +113,7 @@ $rootScope.newusername= LoginService.getUserid();
 
           $rootScope.mysrclat = position.coords.latitude;
           $rootScope.mysrclong = position.coords.longitude;
-          latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
 
           // $rootScope.centerlat = position.coords.latitude;
           // $rootScope.centerlon = position.coords.longitude;
