@@ -90,6 +90,8 @@ angular.module('starter.MainNowController', ['ngOpenFB'])
           $rootScope.returnaddress = "";
           $rootScope.serlat = "";
           $rootScope.serlng = "";
+          $rootScope.sendlat = "";
+          $rootScope.sendlog = "";
       testuser = LoginService.getUserid();
       userid = LoginService.getUserid();
       curdatetime = CurrentDateTime();
@@ -103,7 +105,6 @@ $rootScope.newusername= LoginService.getUserid();
    // $ionicPlatform.ready(function() {
         navigator.geolocation.getCurrentPosition(function (position) {
 
-          latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
           $rootScope.curr_lat=position.coords.latitude;
            $rootScope.curr_lng=position.coords.longitude;
 
@@ -112,9 +113,10 @@ $rootScope.newusername= LoginService.getUserid();
 
           $rootScope.mysrclat = position.coords.latitude;
           $rootScope.mysrclong = position.coords.longitude;
+          latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 
-          $rootScope.centerlat = position.coords.latitude;
-          $rootScope.centerlon = position.coords.longitude;
+          // $rootScope.centerlat = position.coords.latitude;
+          // $rootScope.centerlon = position.coords.longitude;
           $rootScope.calculate_distance = 1;
                $ionicLoading.hide();
           geocoder.geocode(
@@ -123,8 +125,15 @@ $rootScope.newusername= LoginService.getUserid();
               if (status == google.maps.GeocoderStatus.OK) {
                 if (results[0]) {
                   var add = results[0].formatted_address;
+                  console.log(results);
                    $rootScope.address = results[0].formatted_address;
+                   console.log(results[0].geometry.location.lat());
+                   console.log(results[0].geometry.location.lng());
+
+                   $rootScope.curr_lat = results[0].geometry.location.lat();
+                   $rootScope.curr_lng = results[0].geometry.location.lng();
                    $rootScope.showAlert("<b>Current Location - </b>"+$rootScope.address+"<br><br><b>Latitude: </b>"+$rootScope.curr_lat + "<br><b>Longitude: </b>"+$rootScope.curr_lng);
+                   console.log();
                   var value = add.split(",");
 
                   var count = value.length;
@@ -1621,6 +1630,8 @@ console.log(nowall1);
 
               $rootScope.mapclick = 0;
               $rootScope.returnaddress = "";
+              $rootScope.sendlat = "";
+              $rootScope.sendlog = "";
               // alert("mapclick: "+$rootScope.mapclick);
             }
           },
@@ -1715,6 +1726,24 @@ if($scope.marker2)
         console.log(clat, clng);
         coords = new google.maps.LatLng(clat, clng);
         $scope.marker2.setPosition(coords);
+        geocoder.geocode(
+            { 'latLng': coords },
+            function (results, status) {
+              if (status == google.maps.GeocoderStatus.OK) {
+                if (results[0]) {
+                  var add = results[0].formatted_address;
+                  console.log(results);
+                   $rootScope.address = results[0].formatted_address;
+                }
+                else {
+                  $rootScope.showAlert("address not found");
+                }
+              }
+              else {
+                //alert("Geocoder failed due to: " + status);
+              }
+            }
+          );
         // $scope.map.panTo(coords);
       }, function error(err) {
         //  alert('ERROR(' + err.code + '): ' + err.message);
