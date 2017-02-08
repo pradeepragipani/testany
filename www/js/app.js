@@ -80,9 +80,9 @@ angular.module('starter', ['ionic','ngAutocomplete','ngTagsInput','angularGrid',
       StatusBar.styleDefault();
     }
     if(navigator.splashscreen){
-            setTimeout(function () {
-                navigator.splashscreen.hide();
-            }, 3000);
+      setTimeout(function () {
+          navigator.splashscreen.hide();
+      }, 3000);
     }
  cordova.plugins.diagnostic.isLocationEnabled(function(enabled){
   // alert(enabled)
