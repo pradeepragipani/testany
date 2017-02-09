@@ -82,7 +82,7 @@ angular.module('starter', ['ionic','ngAutocomplete','ngTagsInput','angularGrid',
     if(navigator.splashscreen){
       setTimeout(function () {
           navigator.splashscreen.hide();
-      }, 3000);
+      }, 500);
     }
  cordova.plugins.diagnostic.isLocationEnabled(function(enabled){
   // alert(enabled)
